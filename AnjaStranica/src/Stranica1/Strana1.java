@@ -122,6 +122,7 @@ public class Strana1 extends JFrame {
 		table.setFillsViewportHeight(true);
 		table.setEnabled(false);
 		scrollPane.setViewportView(table);
+		
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null, null},
