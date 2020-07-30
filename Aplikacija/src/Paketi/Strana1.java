@@ -1,4 +1,5 @@
-package Stranica1;
+
+package Paketi;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -178,6 +179,7 @@ public class Strana1 extends JFrame {
 		
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		setBounds(100, 100, 800, 500);
 	}
 
