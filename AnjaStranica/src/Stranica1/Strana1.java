@@ -114,7 +114,7 @@ public class Strana1 extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setViewportBorder(null);
-		scrollPane.setBounds(217, 110, 536, 309);
+		scrollPane.setBounds(222, 119, 536, 309);
 		getContentPane().add(scrollPane);
 		
 		table = new JTable();
