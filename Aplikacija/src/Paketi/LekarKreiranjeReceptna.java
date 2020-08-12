@@ -96,7 +96,6 @@ getContentPane().setForeground(new Color(0, 0, 51));
 		BtnDodajRecept.setFocusPainted(false);
 		BtnDodajRecept.setBackground(new Color(51, 102, 102));
 		
-		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(27, 5, 150, 112);
 		lblNewLabel.setIcon(new ImageIcon(LekarSpisakRecepata.class.getResource("/Slike/LogoM.png")));
