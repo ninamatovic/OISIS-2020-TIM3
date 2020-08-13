@@ -28,6 +28,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 public class Strana1 extends JFrame {
 
@@ -36,6 +37,7 @@ public class Strana1 extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTable table;
+	private JTextField textField;
 	
 
 	/**
@@ -58,59 +60,60 @@ public class Strana1 extends JFrame {
 	 * Create the frame.
 	 */
 	public Strana1() {
+		getContentPane().setForeground(new Color(0, 0, 51));
 		
 		
 		getContentPane().setBackground(new Color(102, 153, 153));
 		
-		JButton btnPo = new JButton("Po\u010Detna");
-		btnPo.setBounds(30, 110, 150, 40);
-		btnPo.setBackground(new Color(51, 102, 102));
-		btnPo.setForeground(new Color(255, 255, 255));
-		btnPo.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPo.setFocusPainted(false);
+		JButton btnPocetna = new JButton("Po\u010Detna");
+		btnPocetna.setBounds(30, 110, 150, 40);
+		btnPocetna.setBackground(new Color(51, 102, 102));
+		btnPocetna.setForeground(new Color(255, 255, 255));
+		btnPocetna.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnPocetna.setFocusPainted(false);
 		
-		JButton btnPo_1 = new JButton("Lekovi");
-		btnPo_1.setBounds(30, 170, 150, 40);
-		btnPo_1.setForeground(Color.WHITE);
-		btnPo_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPo_1.setFocusPainted(false);
-		btnPo_1.setBackground(new Color(51, 102, 102));
+		JButton btnLekovi = new JButton("Lekovi");
+		btnLekovi.setBounds(30, 170, 150, 40);
+		btnLekovi.setForeground(Color.WHITE);
+		btnLekovi.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnLekovi.setFocusPainted(false);
+		btnLekovi.setBackground(new Color(51, 102, 102));
 		
-		JButton btnPo_1_1 = new JButton("Recepti");
-		btnPo_1_1.setBounds(30, 230, 150, 40);
-		btnPo_1_1.setForeground(Color.WHITE);
-		btnPo_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPo_1_1.setFocusPainted(false);
-		btnPo_1_1.setBackground(new Color(51, 102, 102));
+		JButton btnRecepti = new JButton("Recepti");
+		btnRecepti.setBounds(30, 230, 150, 40);
+		btnRecepti.setForeground(Color.WHITE);
+		btnRecepti.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnRecepti.setFocusPainted(false);
+		btnRecepti.setBackground(new Color(51, 102, 102));
 		
-		JButton btnPo_1_1_1 = new JButton("Dodaj recept");
-		btnPo_1_1_1.setBounds(30, 290, 150, 40);
-		btnPo_1_1_1.addActionListener(new ActionListener() {
+		JButton BtnDodajRecept = new JButton("Dodaj recept");
+		BtnDodajRecept.setBounds(30, 290, 150, 40);
+		BtnDodajRecept.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnPo_1_1_1.setForeground(Color.WHITE);
-		btnPo_1_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
-		btnPo_1_1_1.setFocusPainted(false);
-		btnPo_1_1_1.setBackground(new Color(51, 102, 102));
+		BtnDodajRecept.setForeground(Color.WHITE);
+		BtnDodajRecept.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
+		BtnDodajRecept.setFocusPainted(false);
+		BtnDodajRecept.setBackground(new Color(51, 102, 102));
 		
-		JButton btnPo_1_1_1_1 = new JButton("Korpa");
-		btnPo_1_1_1_1.setBounds(30, 380, 150, 40);
-		btnPo_1_1_1_1.setForeground(Color.WHITE);
-		btnPo_1_1_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPo_1_1_1_1.setFocusPainted(false);
-		btnPo_1_1_1_1.setBackground(new Color(51, 102, 102));
+		JButton btnKorpa = new JButton("Korpa");
+		btnKorpa.setBounds(30, 380, 150, 40);
+		btnKorpa.setForeground(Color.WHITE);
+		btnKorpa.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnKorpa.setFocusPainted(false);
+		btnKorpa.setBackground(new Color(51, 102, 102));
 		
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(27, 5, 150, 112);
 		lblNewLabel.setIcon(new ImageIcon(Strana1.class.getResource("/Slike/LogoM.png")));
 		getContentPane().setLayout(null);
-		getContentPane().add(btnPo);
-		getContentPane().add(btnPo_1);
-		getContentPane().add(btnPo_1_1);
-		getContentPane().add(btnPo_1_1_1);
-		getContentPane().add(btnPo_1_1_1_1);
+		getContentPane().add(btnPocetna);
+		getContentPane().add(btnLekovi);
+		getContentPane().add(btnRecepti);
+		getContentPane().add(BtnDodajRecept);
+		getContentPane().add(btnKorpa);
 		getContentPane().add(lblNewLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -176,6 +179,24 @@ public class Strana1 extends JFrame {
 		table.setForeground(new Color(0, 51, 102));
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102), new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		
+		JLabel lblNewLabel_1 = new JLabel("Pretraga");
+		lblNewLabel_1.setForeground(new Color(0, 0, 51));
+		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblNewLabel_1.setBounds(217, 36, 88, 27);
+		getContentPane().add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(311, 44, 223, 19);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton BtnIzlogujSe = new JButton("Izloguj se");
+		BtnIzlogujSe.setBackground(new Color(204, 204, 255));
+		BtnIzlogujSe.setForeground(new Color(0, 0, 51));
+		BtnIzlogujSe.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		BtnIzlogujSe.setBounds(603, 29, 150, 40);
+		getContentPane().add(BtnIzlogujSe);
 		
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

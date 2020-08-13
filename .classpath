@@ -5,6 +5,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="Aplikacija/src"/>
+	<classpathentry kind="output" path="Admin-SpisakKorisnika/bin"/>
 </classpath>
