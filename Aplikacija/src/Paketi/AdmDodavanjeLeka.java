@@ -115,7 +115,7 @@ public class AdmDodavanjeLeka extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("Lekovi");
 		lblNewLabel_1.setForeground(Color.BLACK);
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
-		lblNewLabel_1.setBounds(248, -14, 240, 111);
+		lblNewLabel_1.setBounds(243, -14, 245, 111);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Lista lekova ");

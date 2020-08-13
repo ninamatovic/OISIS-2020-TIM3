@@ -158,14 +158,14 @@ public class ApDodavanjeLeka extends JFrame {
 		Button button_6 = new Button("Otkazi");
 		button_6.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		button_6.setBackground(new Color(255, 182, 193));
-		button_6.setBounds(592, 492, 125, 37);
+		button_6.setBounds(627, 492, 125, 37);
 		panel.add(button_6);
 		
 		Button button_6_1 = new Button("Potvrdi");
 		button_6_1.setForeground(Color.WHITE);
 		button_6_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		button_6_1.setBackground(new Color(102, 205, 170));
-		button_6_1.setBounds(408, 492, 125, 37);
+		button_6_1.setBounds(443, 492, 125, 37);
 		panel.add(button_6_1);
 		
 		JLabel lblNewLabel_3_2 = new JLabel("Izmeni postojeci");

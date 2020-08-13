@@ -109,7 +109,7 @@ public class AdmSpisakKorisnika extends JFrame {
 		panel.add(button_5);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(286, 207, 560, 322);
+		scrollPane.setBounds(286, 210, 560, 322);
 		panel.add(scrollPane);
 		
 		table = new JTable();
