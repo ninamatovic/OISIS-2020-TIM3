@@ -109,7 +109,7 @@ getContentPane().setForeground(new Color(0, 0, 51));
 		
 		
 		JLabel lblNewLabel_1 = new JLabel("Kreiranje novog recepta");
-		lblNewLabel_1.setForeground(new Color(0, 0, 51));
+		lblNewLabel_1.setForeground(new Color(51, 0, 51));
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
 		lblNewLabel_1.setBounds(187, 23, 360, 46);
 		getContentPane().add(lblNewLabel_1);
