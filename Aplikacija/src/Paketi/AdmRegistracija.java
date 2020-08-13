@@ -65,7 +65,7 @@ public class AdmRegistracija extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(AdmRegistracija.class.getResource("/Slike1/LogoM.png")));
+		lblNewLabel.setIcon(new ImageIcon(AdmRegistracija.class.getResource("/Slike/LogoM.png")));
 		lblNewLabel.setBounds(40, 0, 149, 148);
 		panel.add(lblNewLabel);
 		
@@ -188,8 +188,5 @@ public class AdmRegistracija extends JFrame {
 		button_6_1.setBackground(new Color(102, 205, 170));
 		button_6_1.setBounds(574, 493, 125, 37);
 		panel.add(button_6_1);
-		button.setOpaque(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
 	}
 }

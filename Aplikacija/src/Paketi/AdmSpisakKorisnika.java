@@ -62,7 +62,7 @@ public class AdmSpisakKorisnika extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(AdmSpisakKorisnika.class.getResource("/Slike1/LogoM.png")));
+		lblNewLabel.setIcon(new ImageIcon(AdmSpisakKorisnika.class.getResource("/Slike/LogoM.png")));
 		lblNewLabel.setBounds(40, 0, 149, 148);
 		panel.add(lblNewLabel);
 		
@@ -180,8 +180,5 @@ public class AdmSpisakKorisnika extends JFrame {
 		lblNewLabel_3_1.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
 		lblNewLabel_3_1.setBounds(423, 96, 171, 28);
 		panel.add(lblNewLabel_3_1);
-		button.setOpaque(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
 	}
 }

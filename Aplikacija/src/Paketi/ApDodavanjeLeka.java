@@ -65,7 +65,7 @@ public class ApDodavanjeLeka extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(ApDodavanjeLeka.class.getResource("/Slike1/LogoM.png")));
+		lblNewLabel.setIcon(new ImageIcon(ApDodavanjeLeka.class.getResource("/Slike/LogoM.png")));
 		lblNewLabel.setBounds(40, 0, 149, 148);
 		panel.add(lblNewLabel);
 		

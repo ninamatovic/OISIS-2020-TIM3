@@ -21,6 +21,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JCheckBox;
 
 public class AdmDodavanjeLeka extends JFrame {
 
@@ -65,7 +66,7 @@ public class AdmDodavanjeLeka extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(AdmDodavanjeLeka.class.getResource("/Slike1/LogoM.png")));
+		lblNewLabel.setIcon(new ImageIcon(AdmDodavanjeLeka.class.getResource("/Slike/LogoM.png")));
 		lblNewLabel.setBounds(40, 0, 149, 148);
 		panel.add(lblNewLabel);
 		
@@ -165,14 +166,14 @@ public class AdmDodavanjeLeka extends JFrame {
 		Button button_6 = new Button("Otkazi");
 		button_6.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		button_6.setBackground(new Color(255, 182, 193));
-		button_6.setBounds(592, 492, 125, 37);
+		button_6.setBounds(628, 513, 125, 37);
 		panel.add(button_6);
 		
 		Button button_6_1 = new Button("Potvrdi");
 		button_6_1.setForeground(Color.WHITE);
 		button_6_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		button_6_1.setBackground(new Color(102, 205, 170));
-		button_6_1.setBounds(408, 492, 125, 37);
+		button_6_1.setBounds(444, 513, 125, 37);
 		panel.add(button_6_1);
 		
 		JLabel lblNewLabel_3_2 = new JLabel("Izmeni postojeci");
@@ -184,8 +185,10 @@ public class AdmDodavanjeLeka extends JFrame {
 		textField_3.setColumns(10);
 		textField_3.setBounds(484, 305, 233, 45);
 		panel.add(textField_3);
-		button.setOpaque(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("Recept");
+		chckbxNewCheckBox.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		chckbxNewCheckBox.setBounds(548, 445, 97, 37);
+		panel.add(chckbxNewCheckBox);
 	}
 }
