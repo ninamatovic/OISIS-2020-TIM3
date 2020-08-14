@@ -74,7 +74,7 @@ public class AdmSpisakLekova extends JFrame {
 			btnPo_1_1.setFocusPainted(false);
 			btnPo_1_1.setBackground(new Color(51, 102, 102));
 			
-			JButton btnPo_1_1_1_1 = new JButton("Korpa");
+			JButton btnPo_1_1_1_1 = new JButton("Prodaja");
 			btnPo_1_1_1_1.setBounds(30, 380, 150, 40);
 			btnPo_1_1_1_1.setForeground(Color.WHITE);
 			btnPo_1_1_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
@@ -94,22 +94,22 @@ public class AdmSpisakLekova extends JFrame {
 			
 			JTextArea txtrPretraga = new JTextArea();
 			txtrPretraga.setText("Pretraga");
-			txtrPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 21));
+			txtrPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 			txtrPretraga.setBackground(new Color(102, 153, 153));
-			txtrPretraga.setBounds(216, 74, 116, 35);
+			txtrPretraga.setBounds(217, 78, 88, 27);
 			getContentPane().add(txtrPretraga);
 			
 			textField = new JTextField();
-			textField.setBounds(324, 86, 203, 20);
+			textField.setBounds(292, 85, 303, 19);
 			getContentPane().add(textField);
 			textField.setColumns(10);
 			
 			JButton btnIzlogujSe = new JButton("Izloguj se");
-			btnIzlogujSe.setForeground(Color.WHITE);
+			btnIzlogujSe.setForeground(new Color(255, 255, 255));
 			btnIzlogujSe.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 			btnIzlogujSe.setFocusPainted(false);
-			btnIzlogujSe.setBackground(new Color(51, 102, 102));
-			btnIzlogujSe.setBounds(584, 21, 150, 40);
+			btnIzlogujSe.setBackground(new Color(204, 204, 255));
+			btnIzlogujSe.setBounds(603, 29, 150, 40);
 			getContentPane().add(btnIzlogujSe);
 			
 			
@@ -178,10 +178,18 @@ public class AdmSpisakLekova extends JFrame {
 			table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102), new Color(0, 51, 102), new Color(0, 51, 102)));
 			table.setBackground(new Color(204, 204, 255));
 			
-			JLabel lblNewLabel_1 = new JLabel("Lekovi");
-			lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 35));
-			lblNewLabel_1.setBounds(216, 21, 196, 54);
+			JLabel lblNewLabel_1 = new JLabel("Spisak Lekova");
+			lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
+			lblNewLabel_1.setBounds(217, 20, 309, 46);
 			getContentPane().add(lblNewLabel_1);
+			
+			JButton btnPo_1_1_1 = new JButton("Korisnici");
+			btnPo_1_1_1.setForeground(Color.WHITE);
+			btnPo_1_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+			btnPo_1_1_1.setFocusPainted(false);
+			btnPo_1_1_1.setBackground(new Color(51, 102, 102));
+			btnPo_1_1_1.setBounds(30, 292, 150, 40);
+			getContentPane().add(btnPo_1_1_1);
 			
 			
 			setBackground(Color.WHITE);

@@ -68,7 +68,7 @@ public class AdmIzvestaj extends JFrame {
 		btnPo_1_1.setFocusPainted(false);
 		btnPo_1_1.setBackground(new Color(51, 102, 102));
 		
-		JButton btnPo_1_1_1_1 = new JButton("Korpa");
+		JButton btnPo_1_1_1_1 = new JButton("Prodaja");
 		btnPo_1_1_1_1.setBounds(30, 380, 150, 40);
 		btnPo_1_1_1_1.setForeground(Color.WHITE);
 		btnPo_1_1_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
@@ -91,18 +91,19 @@ public class AdmIzvestaj extends JFrame {
 		
 		
 		JButton btnIzlogujSe = new JButton("Izloguj se");
-		btnIzlogujSe.setForeground(Color.WHITE);
+		btnIzlogujSe.setForeground(new Color(255, 255, 255));
 		btnIzlogujSe.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		btnIzlogujSe.setFocusPainted(false);
-		btnIzlogujSe.setBackground(new Color(51, 102, 102));
-		btnIzlogujSe.setBounds(584, 21, 150, 40);
+		btnIzlogujSe.setBackground(new Color(204, 204, 255));
+		btnIzlogujSe.setBounds(603, 29, 150, 40);
 		getContentPane().add(btnIzlogujSe);
 		
 		
 		
+		
 		JLabel lblNewLabel_1 = new JLabel("Izveštaj");
-		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 35));
-		lblNewLabel_1.setBounds(216, 21, 196, 54);
+		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
+		lblNewLabel_1.setBounds(217, 20, 309, 46);
 		getContentPane().add(lblNewLabel_1);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -164,19 +165,30 @@ public class AdmIzvestaj extends JFrame {
 		scrollPane_1.setViewportView(table);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Ukupna prodaja svih lekova");
+		rdbtnNewRadioButton.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
 		rdbtnNewRadioButton.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton.setBounds(226, 82, 327, 23);
 		getContentPane().add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnUkupnaProdajaSvih = new JRadioButton("Ukupna prodaja svih lekova odabranog proizvo\u0111a\u010D");
+		rdbtnUkupnaProdajaSvih.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
 		rdbtnUkupnaProdajaSvih.setBackground(new Color(102, 153, 153));
-		rdbtnUkupnaProdajaSvih.setBounds(226, 122, 327, 23);
+		rdbtnUkupnaProdajaSvih.setBounds(226, 122, 446, 23);
 		getContentPane().add(rdbtnUkupnaProdajaSvih);
 		
 		JRadioButton rdbtnUkupnaProdajaSvih_1 = new JRadioButton("Ukupna prodaja svih lekova koje je odabrani apotekar prodao");
+		rdbtnUkupnaProdajaSvih_1.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
 		rdbtnUkupnaProdajaSvih_1.setBackground(new Color(102, 153, 153));
 		rdbtnUkupnaProdajaSvih_1.setBounds(226, 164, 497, 23);
 		getContentPane().add(rdbtnUkupnaProdajaSvih_1);
+		
+		JButton btnPo_1_1_1 = new JButton("Korisnici");
+		btnPo_1_1_1.setForeground(Color.WHITE);
+		btnPo_1_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnPo_1_1_1.setFocusPainted(false);
+		btnPo_1_1_1.setBackground(new Color(51, 102, 102));
+		btnPo_1_1_1.setBounds(30, 295, 150, 40);
+		getContentPane().add(btnPo_1_1_1);
 		
 		
 		setBackground(Color.WHITE);
