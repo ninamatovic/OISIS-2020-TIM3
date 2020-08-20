@@ -11,6 +11,15 @@ public class Prescription {
 	private Date date;
 	private Map<String, Integer> meds = new LinkedHashMap<>();
 	private float totalPrice;
+	private boolean removed = false;
+
+	public boolean isRemoved() {
+		return removed;
+	}
+
+	public void setRemoved(boolean removed) {
+		this.removed = removed;
+	}
 
 	public int getId() {
 		return id;

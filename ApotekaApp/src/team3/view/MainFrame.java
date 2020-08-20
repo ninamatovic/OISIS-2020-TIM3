@@ -10,6 +10,8 @@ import team3.view.admin.AdmDodavanjeLeka;
 import team3.view.admin.AdmRegistracija;
 import team3.view.admin.AdmSpisakKorisnika;
 import team3.view.admin.AdmSpisakLekova;
+import team3.view.admin.AdmSpisakRecepata;
+import team3.view.admin.AdminDetaljiRecepta;
 import team3.view.doctor.LekarDetaljiRecepta;
 import team3.view.doctor.LekarDodavanjeLekaURecept;
 import team3.view.doctor.LekarKreiranjeRecepta;
@@ -114,8 +116,18 @@ public class MainFrame extends JFrame {
 	}
 
 	public void showRecipes() {
+		User u = Database.getInstance().getLoggedIn();
 		getContentPane().removeAll();
-		JPanel panel = (JPanel) new LekarSpisakRecepata();
+		JPanel panel = null;
+		if (u.getRole().equals("Admin")) {
+
+			panel = (JPanel) new AdmSpisakRecepata();
+
+		} else if (u.getRole().equals("Lekar")) {
+			panel = (JPanel) new LekarSpisakRecepata();
+
+		}
+
 		adjustSize(panel);
 		add(panel);
 	}
@@ -131,8 +143,17 @@ public class MainFrame extends JFrame {
 
 	public void showPrescriptionDetails(Prescription prescription) {
 		lastFrame = (JPanel) getContentPane().getComponent(0);
-		getContentPane().removeAll();
 		JPanel panel = (JPanel) new LekarDetaljiRecepta(prescription);
+		User u = Database.getInstance().getLoggedIn();
+		getContentPane().removeAll();
+		if (u.getRole().equals("Admin")) {
+
+			panel = (JPanel) new AdminDetaljiRecepta(prescription);
+
+		}
+
+		getContentPane().removeAll();
+
 		adjustSize(panel);
 		add(panel);
 	}

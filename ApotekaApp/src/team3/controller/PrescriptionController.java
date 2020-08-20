@@ -40,4 +40,13 @@ public class PrescriptionController {
 
 	}
 
+	public static Float totalPrice(Prescription p) {
+		Float ret = 0f;
+		for (String a : p.getMeds().keySet()) {
+			Medicine med = MedicineController.getById(a);
+			ret += p.getMeds().get(a) * med.getPrice();
+		}
+		return ret;
+	}
+
 }

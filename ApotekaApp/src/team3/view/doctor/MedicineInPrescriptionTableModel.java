@@ -13,7 +13,6 @@ import team3.model.Prescription;
 public class MedicineInPrescriptionTableModel extends AbstractTableModel {
 
 	private static final long serialVersionUID = 2710362894062472488L;
-	private static Database database = Database.getInstance();
 	private List<String> kolone = new ArrayList<String>();
 	private boolean editable;
 	private Prescription prescription;

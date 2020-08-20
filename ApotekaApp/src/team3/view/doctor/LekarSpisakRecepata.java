@@ -42,7 +42,6 @@ public class LekarSpisakRecepata extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTable table;
-	private JTextField textField;
 
 	public LekarSpisakRecepata() {
 		setForeground(new Color(0, 0, 51));
@@ -86,9 +85,9 @@ public class LekarSpisakRecepata extends JPanel {
 					JOptionPane.showMessageDialog(null, "Nijedan recept nije selektovan");
 					return;
 				}
-				// TODO: detalji recepta
-				JOptionPane.showMessageDialog(null, "TBD");
-				MainFrame.getInstance().showPrescriptionDetails(Database.getInstance().getPrescriptions().get(selected));
+				// JOptionPane.showMessageDialog(null, "TBD");
+				MainFrame.getInstance()
+						.showPrescriptionDetails(Database.getInstance().getPrescriptions().get(selected));
 
 			}
 		});
