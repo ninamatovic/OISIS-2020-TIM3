@@ -16,26 +16,43 @@ import team3.view.MainFrame;
 
 public class DoctorUtils {
 	public static void addSidebar(JPanel panel) {
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(("/resources/img/LogoM.png")));
-		lblNewLabel.setBounds(40, 0, 149, 148);
-		panel.add(lblNewLabel);
 
-		JButton button = new JButton("Pocetna");
-		button.setForeground(UIManager.getColor("JButton.highlight"));
-		button.setBackground(new Color(0, 128, 128));
-		button.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		button.setBounds(30, 154, 171, 45);
-		panel.add(button);
+		JButton btnPocetna = new JButton("Po\u010Detna");
+		btnPocetna.setBounds(30, 110, 150, 40);
+		btnPocetna.setBackground(new Color(51, 102, 102));
+		btnPocetna.setForeground(new Color(255, 255, 255));
+		btnPocetna.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnPocetna.setFocusPainted(false);
 
-		JButton button_1 = new JButton("Lekovi");
-		button_1.setForeground(Color.WHITE);
-		button_1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		button_1.setBackground(new Color(0, 128, 128));
-		button_1.setBounds(30, 237, 171, 45);
-		panel.add(button_1);
+		JButton btnLekovi = new JButton("Lekovi");
+		btnLekovi.setBounds(30, 170, 150, 40);
+		btnLekovi.setForeground(Color.WHITE);
+		btnLekovi.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnLekovi.setFocusPainted(false);
+		btnLekovi.setBackground(new Color(51, 102, 102));
 
-		button_1.addActionListener(new ActionListener() {
+		JButton btnRecepti = new JButton("Recepti");
+		btnRecepti.setBounds(30, 230, 150, 40);
+		btnRecepti.setForeground(Color.WHITE);
+		btnRecepti.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnRecepti.setFocusPainted(false);
+		btnRecepti.setBackground(new Color(51, 102, 102));
+
+		JButton BtnDodajRecept = new JButton("Kreiraj recept");
+		BtnDodajRecept.setBounds(30, 290, 150, 40);
+		BtnDodajRecept.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+
+		/*
+		 * JLabel lblNewLabel = new JLabel(""); lblNewLabel.setIcon(new
+		 * ImageIcon(("/resources/img/LogoM.png"))); lblNewLabel.setBounds(40, 0, 149,
+		 * 148); panel.add(lblNewLabel);
+		 * 
+		 */
+
+		btnLekovi.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -43,25 +60,48 @@ public class DoctorUtils {
 			}
 		});
 
-		JButton button_2 = new JButton("Recepti");
-		button_2.setForeground(Color.WHITE);
-		button_2.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		button_2.setBackground(new Color(0, 128, 128));
-		button_2.setBounds(30, 319, 171, 45);
-		panel.add(button_2);
+		btnRecepti.addActionListener(new ActionListener() {
 
-		JButton button_5 = new JButton("Izloguj se");
-		button_5.setForeground(Color.WHITE);
-		button_5.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		button_5.setBackground(new Color(0, 128, 128));
-		button_5.setBounds(675, 29, 171, 45);
-		panel.add(button_5);
-		button_5.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().showRecipes();
+
+			}
+		});
+
+		BtnDodajRecept.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().showNewRecipe();
+
+			}
+		});
+
+		BtnDodajRecept.setForeground(Color.WHITE);
+		BtnDodajRecept.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
+		BtnDodajRecept.setFocusPainted(false);
+		BtnDodajRecept.setBackground(new Color(51, 102, 102));
+
+		panel.add(btnPocetna);
+		panel.add(btnLekovi);
+		panel.add(btnRecepti);
+		panel.add(BtnDodajRecept);
+
+		JButton BtnIzlogujSe = new JButton("Izloguj se");
+		BtnIzlogujSe.setBackground(new Color(51, 102, 102));
+		BtnIzlogujSe.setForeground(new Color(255, 255, 255));
+		BtnIzlogujSe.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		BtnIzlogujSe.setBounds(603, 29, 150, 40);
+		BtnIzlogujSe.setFocusPainted(false);
+
+		BtnIzlogujSe.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				UserController.logout();
 			}
 		});
+		panel.add(BtnIzlogujSe);
 
 	}
 }

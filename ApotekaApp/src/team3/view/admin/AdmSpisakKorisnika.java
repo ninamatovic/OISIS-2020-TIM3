@@ -66,6 +66,13 @@ public class AdmSpisakKorisnika extends JPanel {
 		panel.add(textField);
 		textField.setColumns(10);
 
+		
+		JLabel lblNewLabel_1 = new JLabel("Korisnici");
+		lblNewLabel_1.setForeground(Color.BLACK);
+		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
+		lblNewLabel_1.setBounds(248, -14, 240, 111);
+		panel.add(lblNewLabel_1);
+		
 		JLabel lblNewLabel_3 = new JLabel("Lista korisnika ");
 		lblNewLabel_3.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
 		lblNewLabel_3.setBounds(248, 96, 171, 28);

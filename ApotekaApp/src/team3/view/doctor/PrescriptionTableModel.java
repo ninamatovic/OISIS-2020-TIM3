@@ -16,7 +16,7 @@ public class PrescriptionTableModel extends AbstractTableModel {
 	private List<String> kolone = new ArrayList<String>();
 
 	public PrescriptionTableModel() {
-		kolone.add("Šifra recepta");
+		kolone.add("Šifra");
 		kolone.add("Datum");
 		kolone.add("Lekar");
 		kolone.add("Pacijent");

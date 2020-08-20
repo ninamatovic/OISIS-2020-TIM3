@@ -21,45 +21,14 @@ public class LekarSpisakLekova extends JPanel {
 	public LekarSpisakLekova() {
 
 		setBackground(new Color(102, 153, 153));
-
-		JButton btnPo = new JButton("Po\u010Detna");
-		btnPo.setBounds(30, 110, 150, 40);
-		btnPo.setBackground(new Color(51, 102, 102));
-		btnPo.setForeground(new Color(255, 255, 255));
-		btnPo.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPo.setFocusPainted(false);
-
-		JButton btnPo_1 = new JButton("Lekovi");
-		btnPo_1.setBounds(30, 170, 150, 40);
-		btnPo_1.setForeground(Color.WHITE);
-		btnPo_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPo_1.setFocusPainted(false);
-		btnPo_1.setBackground(new Color(51, 102, 102));
-
-		JButton btnPo_1_1 = new JButton("Recepti");
-		btnPo_1_1.setBounds(30, 230, 150, 40);
-		btnPo_1_1.setForeground(Color.WHITE);
-		btnPo_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPo_1_1.setFocusPainted(false);
-		btnPo_1_1.setBackground(new Color(51, 102, 102));
-
-		JButton btnPo_1_1_1_1 = new JButton("Dodaj lek");
-		btnPo_1_1_1_1.setBounds(30, 290, 150, 40);
-		btnPo_1_1_1_1.setForeground(Color.WHITE);
-		btnPo_1_1_1_1.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPo_1_1_1_1.setFocusPainted(false);
-		btnPo_1_1_1_1.setBackground(new Color(51, 102, 102));
-
+	
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(27, 5, 150, 112);
 		lblNewLabel.setIcon(new ImageIcon(("/resources/img/LogoM.png")));
 		setLayout(null);
-		add(btnPo);
-		add(btnPo_1);
-		add(btnPo_1_1);
-		add(btnPo_1_1_1_1);
-		add(lblNewLabel);
 
+		add(lblNewLabel);
+		DoctorUtils.addSidebar(this);
 		JTextArea txtrPretraga = new JTextArea();
 		txtrPretraga.setText("Pretraga");
 		txtrPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
@@ -102,7 +71,7 @@ public class LekarSpisakLekova extends JPanel {
 		lblNewLabel_1.setBounds(217, 20, 309, 46);
 		add(lblNewLabel_1);
 
-		setBackground(Color.WHITE);
+		//setBackground(Color.WHITE);
 
 		setBounds(100, 100, 800, 500);
 	}
