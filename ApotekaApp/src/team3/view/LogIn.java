@@ -69,7 +69,7 @@ public class LogIn extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (UserController.login(textField.getText().trim(), textField_1.getText())) {
-					JOptionPane.showMessageDialog(null, "Ulogovan");
+				//	JOptionPane.showMessageDialog(null, "Ulogovan");
 				} else {
 					JOptionPane.showMessageDialog(null, "Pogrešno korisnièko ime i/ili lozinka");
 

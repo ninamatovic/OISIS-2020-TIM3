@@ -1,7 +1,6 @@
 package team3.view.admin;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -49,7 +48,7 @@ public class AdmRegistracija extends JPanel {
 		panel.add(lblNewLabel);
 
 		JButton button = new JButton("Pocetna");
-		button.setForeground(UIManager.getColor("Button.highlight"));
+		button.setForeground(UIManager.getColor("JButton.highlight"));
 		button.setBackground(new Color(0, 128, 128));
 		button.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		button.setBounds(30, 154, 171, 45);

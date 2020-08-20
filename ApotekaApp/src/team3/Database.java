@@ -1,19 +1,22 @@
 package team3;
 
-
 import java.util.LinkedList;
 import java.util.List;
 
+import team3.model.Medicine;
 import team3.model.User;
 
 public class Database {
 	private List<User> users = new LinkedList<>();
+	private List<Medicine> medicine = new LinkedList<>();
 	private static Database instance;
+	private User loggedIn;
 
 	private Database() {
 		User u = new User();
 		u.setUsername("admin");
 		u.setPassword("admin");
+		u.setRole("Admin");
 		users.add(u);
 	}
 
@@ -25,6 +28,18 @@ public class Database {
 
 	public List<User> getUsers() {
 		return users;
+	}
+
+	public List<Medicine> getMedicine() {
+		return medicine;
+	}
+
+	public User getLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(User loggedIn) {
+		this.loggedIn = loggedIn;
 	}
 
 }
