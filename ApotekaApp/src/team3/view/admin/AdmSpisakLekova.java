@@ -81,6 +81,13 @@ public class AdmSpisakLekova extends JPanel {
 		 * 
 		 */
 
+		JLabel lblNewLabel_1 = new JLabel("Lekovi");
+		lblNewLabel_1.setForeground(Color.BLACK);
+		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
+		lblNewLabel_1.setBounds(248, -14, 240, 111);
+		panel.add(lblNewLabel_1);
+		panel.add(lblNewLabel_1);
+
 		textField = new JTextField();
 		textField.setBounds(374, 161, 329, 28);
 		panel.add(textField);
@@ -94,7 +101,7 @@ public class AdmSpisakLekova extends JPanel {
 		table = new JTable();
 		table.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		table.setFillsViewportHeight(true);
-		//table.setEnabled(false);
+		// table.setEnabled(false);
 		scrollPane.setViewportView(table);
 
 		table.setModel(new MedicineTableModel());

@@ -28,6 +28,10 @@ import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.table.DefaultTableModel;
+
+import team3.Database;
+import team3.view.MainFrame;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
@@ -38,13 +42,12 @@ public class LekarSpisakRecepata extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTable table;
-	private JTextField textField;
 
 	public LekarSpisakRecepata() {
 		setForeground(new Color(0, 0, 51));
 
 		setBackground(new Color(102, 153, 153));
-
+		DoctorUtils.addSidebar(this);
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(27, 5, 150, 112);
 		lblNewLabel.setIcon(new ImageIcon(("/resources/img/LogoM.png")));
@@ -82,8 +85,9 @@ public class LekarSpisakRecepata extends JPanel {
 					JOptionPane.showMessageDialog(null, "Nijedan recept nije selektovan");
 					return;
 				}
-				// TODO: detalji recepta
-				JOptionPane.showMessageDialog(null, "TBD");
+				// JOptionPane.showMessageDialog(null, "TBD");
+				MainFrame.getInstance()
+						.showPrescriptionDetails(Database.getInstance().getPrescriptions().get(selected));
 
 			}
 		});
@@ -104,14 +108,14 @@ public class LekarSpisakRecepata extends JPanel {
 		add(lblNewLabel_2);
 
 		// setBackground(Color.WHITE);
-		JButton BtnDodajRecept = new JButton("Dodaj recept");
-		BtnDodajRecept.setBounds(30, 290, 150, 40);
-		BtnDodajRecept.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-			}
-		});
-		add(BtnDodajRecept);
+		/*
+		 * JButton BtnDodajRecept = new JButton("Dodaj recept");
+		 * BtnDodajRecept.setBounds(30, 290, 150, 40);
+		 * BtnDodajRecept.addActionListener(new ActionListener() { public void
+		 * actionPerformed(ActionEvent e) {
+		 * 
+		 * } }); add(BtnDodajRecept);
+		 */
 
 		setBounds(100, 100, 800, 500);
 	}

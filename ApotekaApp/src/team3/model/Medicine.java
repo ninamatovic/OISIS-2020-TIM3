@@ -56,4 +56,9 @@ public class Medicine {
 		this.removed = removed;
 	}
 
+	@Override
+	public String toString() {
+		return name + " (" + id + ")";
+	}
+
 }

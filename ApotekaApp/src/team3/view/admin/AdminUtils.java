@@ -49,6 +49,15 @@ public class AdminUtils {
 		button_2.setBackground(new Color(0, 128, 128));
 		button_2.setBounds(30, 319, 171, 45);
 		panel.add(button_2);
+		
+		button_2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().showRecipes();
+			}
+		});
+
 
 		JButton button_3 = new JButton("Korisnici");
 		button_3.setForeground(Color.WHITE);

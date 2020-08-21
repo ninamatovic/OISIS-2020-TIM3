@@ -1,5 +1,8 @@
 package team3.controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import team3.Database;
 import team3.model.Medicine;
 
@@ -36,6 +39,16 @@ public class MedicineController {
 		if (MedicineController.isIdTaken(med.getId()))
 			message += "Sifra veæ posotji\r\n";
 		return message;
+	}
+
+	public static List<Medicine> getAll() {
+		return Database.getInstance().getMedicine().stream().filter(med -> !med.isRemoved())
+				.collect(Collectors.toList());
+	}
+
+	public static Medicine getById(String id) {
+		return Database.getInstance().getMedicine().stream().filter(med -> med.getId().equals(id)).findFirst()
+				.orElse(null);
 	}
 
 }
