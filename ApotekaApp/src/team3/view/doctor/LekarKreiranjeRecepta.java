@@ -95,7 +95,15 @@ public class LekarKreiranjeRecepta extends JPanel {
 
 		table = new JTable();
 		table.setBackground(new Color(176, 224, 230));
-		table.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
+		table.setRowHeight(25);
+		table.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
+		table.setFillsViewportHeight(true);
+
+		table.setForeground(new Color(0, 51, 102));
+		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
+				new Color(0, 51, 102), new Color(0, 51, 102)));
+		table.setBackground(new Color(204, 204, 255));
+
 		table.setModel(new MedicineInPrescriptionTableModel(true, Database.getInstance().getPrescription()));
 		scrollPane.setViewportView(table);
 		/*

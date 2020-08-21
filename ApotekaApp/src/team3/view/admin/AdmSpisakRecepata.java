@@ -48,13 +48,6 @@ public class AdmSpisakRecepata extends JPanel {
 
 		setBackground(new Color(102, 153, 153));
 
-		JLabel txtrPretraga = new JLabel();
-		txtrPretraga.setText("Pretraga");
-		txtrPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-		txtrPretraga.setBackground(new Color(102, 153, 153));
-		txtrPretraga.setBounds(459, 132, 84, 45);
-		panel.add(txtrPretraga);
-
 		/*
 		 * lblNewLabel_2 panel.add(lblNewLabel_2);
 		 * 
@@ -107,6 +100,12 @@ public class AdmSpisakRecepata extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		
+		JButton btnPretraga = new JButton("Pretraga");
+		btnPretraga.setForeground(new Color(0, 0, 51));
+		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		btnPretraga.setBounds(440, 130, 130, 49);
+		panel.add(btnPretraga);
 
 	}
 

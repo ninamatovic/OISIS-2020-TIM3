@@ -24,7 +24,6 @@ import team3.view.MainFrame;
 public class AdmSpisakLekova extends JPanel {
 
 	private JTable table;
-	private JTextField textField;
 
 	public AdmSpisakLekova() {
 
@@ -40,14 +39,10 @@ public class AdmSpisakLekova extends JPanel {
 		panel.setLayout(null);
 
 		AdminUtils.addSidebar(panel);
-		JLabel lblNewLabel_3 = new JLabel("Lista lekova ");
-		lblNewLabel_3.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
-		lblNewLabel_3.setBounds(248, 96, 171, 28);
-		panel.add(lblNewLabel_3);
 
 		JButton lblNewLabel_3_1 = new JButton("Dodaj novi");
 		lblNewLabel_3_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
-		lblNewLabel_3_1.setBounds(392, 96, 171, 28);
+		lblNewLabel_3_1.setBounds(286, 108, 171, 57);
 		panel.add(lblNewLabel_3_1);
 
 		lblNewLabel_3_1.addActionListener(new ActionListener() {
@@ -58,21 +53,9 @@ public class AdmSpisakLekova extends JPanel {
 			}
 		});
 
-		JLabel lblNewLabel_3_2 = new JLabel("Izmeni postojeci");
-		lblNewLabel_3_2.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
-		lblNewLabel_3_2.setBounds(528, 96, 171, 28);
-		panel.add(lblNewLabel_3_2);
-
 		// ----------------------------------------
 
 		setBackground(new Color(102, 153, 153));
-
-		JLabel txtrPretraga = new JLabel();
-		txtrPretraga.setText("Pretraga");
-		txtrPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-		txtrPretraga.setBackground(new Color(102, 153, 153));
-		txtrPretraga.setBounds(286, 154, 84, 45);
-		panel.add(txtrPretraga);
 
 		/*
 		 * lblNewLabel_2 panel.add(lblNewLabel_2);
@@ -88,17 +71,13 @@ public class AdmSpisakLekova extends JPanel {
 		panel.add(lblNewLabel_1);
 		panel.add(lblNewLabel_1);
 
-		textField = new JTextField();
-		textField.setBounds(374, 161, 329, 28);
-		panel.add(textField);
-		textField.setColumns(10);
-
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setViewportBorder(null);
 		scrollPane.setBounds(286, 210, 560, 322);
 		panel.add(scrollPane);
 
 		table = new JTable();
+		table.setRowHeight(25);
 		table.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		table.setFillsViewportHeight(true);
 		// table.setEnabled(false);
@@ -110,6 +89,11 @@ public class AdmSpisakLekova extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		
+		JButton btnPretraga = new JButton("Pretraga");
+		btnPretraga.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
+		btnPretraga.setBounds(467, 108, 171, 57);
+		panel.add(btnPretraga);
 
 	}
 }

@@ -130,17 +130,6 @@ public class ApProdajaLek extends JPanel {
 		comboBox.setBounds(382, 115, 107, 20);
 		panel.add(comboBox);
 
-		btnNewButton_1.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				int q = (int) spinner.getValue();
-				Medicine med = (Medicine) comboBox.getSelectedItem();
-				SellController.addToCart(med, q);
-				((CartTableModel) table.getModel()).fireTableDataChanged();
-			}
-		});
-
 		JLabel lblifraRecepta = new JLabel("\u0160ifra recepta:");
 		lblifraRecepta.setFont(new Font("Comic Sans MS", Font.PLAIN, 12));
 		lblifraRecepta.setBounds(281, 147, 107, 23);
@@ -157,24 +146,6 @@ public class ApProdajaLek extends JPanel {
 		button.setBackground(new Color(0, 128, 128));
 		button.setBounds(612, 148, 89, 23);
 		panel.add(button);
-		button.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String id = textField_1.getText();
-				try {
-					int idd = Integer.parseInt(id);
-					Prescription p = PrescriptionController.getById(idd);
-					if (p == null)
-						JOptionPane.showMessageDialog(null, "Neispravna šifra recepta");
-					else
-						SellController.addPrescriptionToCart(p);
-
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "Neispravna šifra recepta");
-				}
-			}
-		});
 
 		JLabel lblKupac = new JLabel("Kupac:");
 		lblKupac.setBounds(286, 181, 46, 14);
@@ -197,6 +168,46 @@ public class ApProdajaLek extends JPanel {
 		btnPotvrdi.setBounds(551, 552, 89, 23);
 		panel.add(btnPotvrdi);
 
+		button.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String id = textField_1.getText();
+				try {
+					int idd = Integer.parseInt(id);
+					Prescription p = PrescriptionController.getById(idd);
+					if (p == null)
+						JOptionPane.showMessageDialog(null, "Neispravna šifra recepta");
+					else {
+						SellController.addPrescriptionToCart(p);
+						((CartTableModel) table.getModel()).fireTableDataChanged();
+						textField_1.setText("");
+						int pr = SellController.calculatePercentOff(textField.getText());
+						lblPopust.setText("Popust: " + pr + "%");
+						lblUkupnaCena.setText("Ukupno: " + (SellController.getTotalPrice() * (1 - pr / 100.0)));
+					}
+
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Neispravna šifra recepta");
+				}
+			}
+		});
+
+		btnNewButton_1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int q = (int) spinner.getValue();
+				Medicine med = (Medicine) comboBox.getSelectedItem();
+				SellController.addToCart(med, q);
+				((CartTableModel) table.getModel()).fireTableDataChanged();
+				int p = SellController.calculatePercentOff(textField.getText());
+				lblPopust.setText("Popust: " + p + "%");
+				lblUkupnaCena.setText("Ukupno: " + (SellController.getTotalPrice() * (1 - p / 100.0)));
+
+			}
+		});
+
 		JButton btnPoniti = new JButton("Poni\u0161ti");
 		btnPoniti.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -211,22 +222,42 @@ public class ApProdajaLek extends JPanel {
 			public void removeUpdate(DocumentEvent e) {
 				int p = SellController.calculatePercentOff(textField.getText());
 				lblPopust.setText("Popust: " + p + "%");
+				lblUkupnaCena.setText("Ukupno: " + (SellController.getTotalPrice() * (1 - p / 100.0)));
 			}
 
 			@Override
 			public void insertUpdate(DocumentEvent e) {
 				int p = SellController.calculatePercentOff(textField.getText());
 				lblPopust.setText("Popust: " + p + "%");
+				lblUkupnaCena.setText("Ukupno: " + (SellController.getTotalPrice() * (1 - p / 100.0)));
 			}
 
 			@Override
 			public void changedUpdate(DocumentEvent e) {
 				int p = SellController.calculatePercentOff(textField.getText());
 				lblPopust.setText("Popust: " + p + "%");
+				lblUkupnaCena.setText("Ukupno: " + (SellController.getTotalPrice() * (1 - p / 100.0)));
 			}
 		});
 		btnPoniti.setBounds(674, 552, 89, 23);
 		panel.add(btnPoniti);
+		table.setRowHeight(25);
+		table.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
+		table.setFillsViewportHeight(true);
 
+		table.setForeground(new Color(0, 51, 102));
+		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
+				new Color(0, 51, 102), new Color(0, 51, 102)));
+		table.setBackground(new Color(204, 204, 255));
+		btnPotvrdi.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Database.getInstance().getCart().setBuyer(textField.getText());
+				SellController.buy();
+				btnPoniti.doClick();
+
+			}
+		});
 	}
 }

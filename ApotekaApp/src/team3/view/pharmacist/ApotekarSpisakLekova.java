@@ -108,13 +108,21 @@ public class ApotekarSpisakLekova extends JPanel {
 					JOptionPane.showMessageDialog(null, "Lek se može izdavati samo na recept");
 					return;
 				}
-				Medicine me=Database.getInstance().getMedicine().get(selected);
+				Medicine me = Database.getInstance().getMedicine().get(selected);
 				MainFrame.getInstance().showCart(me);
 			}
 		});
 		btnUKorpu.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
 		btnUKorpu.setBounds(675, 107, 171, 45);
 		panel.add(btnUKorpu);
+		table.setRowHeight(25);
+		table.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
+		table.setFillsViewportHeight(true);
+
+		table.setForeground(new Color(0, 51, 102));
+		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
+				new Color(0, 51, 102), new Color(0, 51, 102)));
+		table.setBackground(new Color(204, 204, 255));
 
 	}
 }

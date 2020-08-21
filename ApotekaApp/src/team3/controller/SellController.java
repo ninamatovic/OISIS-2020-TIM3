@@ -59,10 +59,20 @@ public class SellController {
 
 	public static void buy() {
 		SellInfo a = Database.getInstance().getCart();
+
 		a.setDate(new Date());
 		a.setPercentOff(calculatePercentOff(a.getBuyer()));
+		a.setPrice((float) (getTotalPrice() * (1 - a.getPercentOff() / 100.0)));
 		Database.getInstance().getSells().add(a);
 		Database.getInstance().setCart(new SellInfo());
+	}
+
+	public static float getTotalPrice() {
+		float total = 0;
+		for (SellInfoItem a : Database.getInstance().getCart().getItems()) {
+			total += a.getPrice() * a.getQuantity();
+		}
+		return total;
 	}
 
 }

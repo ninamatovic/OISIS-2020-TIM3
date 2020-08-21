@@ -1,14 +1,12 @@
 package team3.view.doctor;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -16,19 +14,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
 
-import java.awt.Color;
-import javax.swing.JFormattedTextField;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
-
-import team3.Database;
-import team3.Main;
 import team3.controller.PrescriptionController;
 import team3.model.Prescription;
 import team3.view.MainFrame;
-import team3.view.admin.UserTableModel;
 
 public class LekarDetaljiRecepta extends JPanel {
 	private JTextField textField_2;
@@ -120,6 +109,14 @@ public class LekarDetaljiRecepta extends JPanel {
 		button.setBackground(new Color(51, 102, 102));
 		button.setBounds(350, 71, 150, 40);
 		add(button);
+		table.setRowHeight(25);
+		table.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
+		table.setFillsViewportHeight(true);
+
+		table.setForeground(new Color(0, 51, 102));
+		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
+				new Color(0, 51, 102), new Color(0, 51, 102)));
+		table.setBackground(new Color(204, 204, 255));
 
 	}
 }

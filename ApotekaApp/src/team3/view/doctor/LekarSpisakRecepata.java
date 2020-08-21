@@ -70,6 +70,10 @@ public class LekarSpisakRecepata extends JPanel {
 
 		table.setModel(new PrescriptionTableModel());
 
+		table.setRowHeight(25);
+		table.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
+		table.setFillsViewportHeight(true);
+
 		table.setForeground(new Color(0, 51, 102));
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));

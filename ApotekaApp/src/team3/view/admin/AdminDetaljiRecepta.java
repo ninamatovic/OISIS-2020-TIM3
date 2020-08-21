@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
+import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
 import team3.controller.PrescriptionController;
@@ -50,7 +51,18 @@ public class AdminDetaljiRecepta extends JPanel {
 
 		table = new JTable(new MedicineInPrescriptionTableModel(false, p));
 		table.setBackground(new Color(176, 224, 230));
-		table.setFont(new Font("Comic Sans MS", Font.BOLD, 12));
+
+		table.setRowHeight(25);
+		table.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
+		table.setFillsViewportHeight(true);
+		// table.setEnabled(false);
+		scrollPane.setViewportView(table);
+
+		table.setForeground(new Color(0, 51, 102));
+		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
+				new Color(0, 51, 102), new Color(0, 51, 102)));
+		table.setBackground(new Color(204, 204, 255));
+
 		scrollPane.setViewportView(table);
 
 		JLabel lblNewLabel_1 = new JLabel("Recept");
