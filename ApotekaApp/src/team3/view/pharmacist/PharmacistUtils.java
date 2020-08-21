@@ -22,14 +22,14 @@ public class PharmacistUtils {
 		btnLekovi.setForeground(Color.WHITE);
 		btnLekovi.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		btnLekovi.setFocusPainted(false);
-		btnLekovi.setBackground(new Color(51, 102, 102));
+		btnLekovi.setBackground(new Color(0, 128, 128));
 
 		JButton btnRecepti = new JButton("Recepti");
 		btnRecepti.setBounds(30, 230, 150, 40);
 		btnRecepti.setForeground(Color.WHITE);
 		btnRecepti.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		btnRecepti.setFocusPainted(false);
-		btnRecepti.setBackground(new Color(51, 102, 102));
+		btnRecepti.setBackground(new Color(0, 128, 128));
 
 		btnLekovi.addActionListener(new ActionListener() {
 
@@ -49,10 +49,11 @@ public class PharmacistUtils {
 		});
 
 		panel.add(btnLekovi);
-		//panel.add(btnRecepti);
+		// panel.add(btnRecepti);
 
 		JButton BtnIzlogujSe = new JButton("Izloguj se");
-		BtnIzlogujSe.setBackground(new Color(51, 102, 102));
+		BtnIzlogujSe.setBackground(new Color(0, 128, 128));
+
 		BtnIzlogujSe.setForeground(new Color(255, 255, 255));
 		BtnIzlogujSe.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		BtnIzlogujSe.setBounds(603, 29, 150, 40);
@@ -77,6 +78,7 @@ public class PharmacistUtils {
 		button_4.setForeground(Color.WHITE);
 		button_4.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		button_4.setBackground(new Color(0, 128, 128));
+
 		button_4.setBounds(30, 484, 171, 45);
 		panel.add(button_4);
 		button_4.addActionListener(new ActionListener() {

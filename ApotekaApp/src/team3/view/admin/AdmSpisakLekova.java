@@ -42,9 +42,11 @@ public class AdmSpisakLekova extends JPanel {
 
 		JButton lblNewLabel_3_1 = new JButton("Dodaj novi");
 		lblNewLabel_3_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
-		lblNewLabel_3_1.setBounds(286, 108, 171, 57);
+		lblNewLabel_3_1.setBounds(286, 115, 160, 50);
 		panel.add(lblNewLabel_3_1);
-
+		lblNewLabel_3_1.setForeground(Color.WHITE);
+		lblNewLabel_3_1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblNewLabel_3_1.setBackground(new Color(0, 128, 128));
 		lblNewLabel_3_1.addActionListener(new ActionListener() {
 
 			@Override
@@ -92,8 +94,10 @@ public class AdmSpisakLekova extends JPanel {
 		
 		JButton btnPretraga = new JButton("Pretraga");
 		btnPretraga.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
-		btnPretraga.setBounds(467, 108, 171, 57);
+		btnPretraga.setBounds(467, 115, 160, 50);
 		panel.add(btnPretraga);
-
+		btnPretraga.setForeground(Color.WHITE);
+		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		btnPretraga.setBackground(new Color(0, 128, 128));
 	}
 }

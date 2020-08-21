@@ -80,6 +80,9 @@ public class LekarSpisakRecepata extends JPanel {
 		table.setBackground(new Color(204, 204, 255));
 
 		JButton lblNewLabel_1 = new JButton("Detalji");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblNewLabel_1.setBackground(new Color(51, 102, 102));
 		lblNewLabel_1.addActionListener(new ActionListener() {
 
 			@Override
@@ -95,9 +98,9 @@ public class LekarSpisakRecepata extends JPanel {
 
 			}
 		});
-		lblNewLabel_1.setForeground(new Color(0, 0, 51));
+
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(217, 78, 88, 27);
+		lblNewLabel_1.setBounds(227, 64, 104, 43);
 		add(lblNewLabel_1);
 
 		/*
@@ -107,8 +110,8 @@ public class LekarSpisakRecepata extends JPanel {
 
 		JLabel lblNewLabel_2 = new JLabel("Spisak recepata");
 		lblNewLabel_2.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
-		lblNewLabel_2.setForeground(new Color(0, 0, 51));
-		lblNewLabel_2.setBounds(217, 20, 309, 46);
+		lblNewLabel_2.setForeground(new Color(0,0,51));
+		lblNewLabel_2.setBounds(217, 11, 309, 46);
 		add(lblNewLabel_2);
 
 		// setBackground(Color.WHITE);

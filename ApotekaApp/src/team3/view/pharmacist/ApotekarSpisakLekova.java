@@ -124,5 +124,17 @@ public class ApotekarSpisakLekova extends JPanel {
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
 
+		lblNewLabel_3_1.setForeground(Color.WHITE);
+		lblNewLabel_3_1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblNewLabel_3_1.setBackground(new Color(0, 128, 128));
+
+		btnPretraga.setForeground(Color.WHITE);
+		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		btnPretraga.setBackground(new Color(0, 128, 128));
+
+		btnUKorpu.setForeground(Color.WHITE);
+		btnUKorpu.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		btnUKorpu.setBackground(new Color(0, 128, 128));
+
 	}
 }

@@ -63,6 +63,7 @@ public class AdmSpisakRecepata extends JPanel {
 		panel.add(lblNewLabel_1);
 
 		JButton lblNewLabel_11 = new JButton("Detalji");
+		
 		lblNewLabel_11.addActionListener(new ActionListener() {
 
 			@Override
@@ -78,9 +79,11 @@ public class AdmSpisakRecepata extends JPanel {
 
 			}
 		});
-		lblNewLabel_11.setForeground(new Color(0, 0, 51));
 		lblNewLabel_11.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 		lblNewLabel_11.setBounds(284, 130, 130, 49);
+		lblNewLabel_11.setForeground(Color.WHITE);
+		lblNewLabel_11.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblNewLabel_11.setBackground(new Color(0, 128, 128));
 		panel.add(lblNewLabel_11);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -102,11 +105,11 @@ public class AdmSpisakRecepata extends JPanel {
 		table.setBackground(new Color(204, 204, 255));
 		
 		JButton btnPretraga = new JButton("Pretraga");
-		btnPretraga.setForeground(new Color(0, 0, 51));
-		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 		btnPretraga.setBounds(440, 130, 130, 49);
 		panel.add(btnPretraga);
-
+		btnPretraga.setForeground(Color.WHITE);
+		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		btnPretraga.setBackground(new Color(0, 128, 128));
 	}
 
 }

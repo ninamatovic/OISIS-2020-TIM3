@@ -68,9 +68,16 @@ public class MainFrame extends JFrame {
 	}
 
 	private void adjustSize(JPanel p) {
-		setSize(p.getWidth() + 1, p.getHeight() + 1);
+		// setSize(p.getWidth() + 1, p.getHeight() + 1);
+		setSize(904, 625);
+		User u = Database.getInstance().getLoggedIn();
+		if (u == null)
+			setSize(800, 500);
 
-		setSize(p.getWidth(), p.getHeight());
+		else if (u.getRole().equals("Lekar"))
+			setSize(800, 500);
+		else
+			setSize(904, 626);
 		revalidate();
 		repaint();
 	}

@@ -72,22 +72,23 @@ public class AdmIzvestaj extends JPanel {
 		panel.add(lblNewLabel_1);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Ukupna prodaja svih lekova");
+		//rdbtnNewRadioButton.setEnabled(false);
 		rdbtnNewRadioButton.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
-		rdbtnNewRadioButton.setBackground(new Color(102, 153, 153));
+		rdbtnNewRadioButton.setBackground(new Color(95, 158, 160));
 		rdbtnNewRadioButton.setBounds(286, 82, 327, 23);
 		panel.add(rdbtnNewRadioButton);
 
 		JRadioButton rdbtnUkupnaProdajaSvih = new JRadioButton(
 				"Ukupna prodaja svih lekova odabranog proizvo\u0111a\u010D");
 		rdbtnUkupnaProdajaSvih.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
-		rdbtnUkupnaProdajaSvih.setBackground(new Color(102, 153, 153));
+		rdbtnUkupnaProdajaSvih.setBackground(new Color(95, 158, 160));
 		rdbtnUkupnaProdajaSvih.setBounds(286, 122, 354, 23);
 		panel.add(rdbtnUkupnaProdajaSvih);
 
 		JRadioButton rdbtnUkupnaProdajaSvih_1 = new JRadioButton(
 				"Ukupna prodaja svih lekova koje je odabrani apotekar prodao");
 		rdbtnUkupnaProdajaSvih_1.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
-		rdbtnUkupnaProdajaSvih_1.setBackground(new Color(102, 153, 153));
+		rdbtnUkupnaProdajaSvih_1.setBackground(new Color(95, 158, 160));
 		rdbtnUkupnaProdajaSvih_1.setBounds(286, 164, 421, 23);
 		panel.add(rdbtnUkupnaProdajaSvih_1);
 		ButtonGroup bg = new ButtonGroup();
