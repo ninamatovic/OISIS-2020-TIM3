@@ -23,6 +23,7 @@ public class PrescriptionController {
 		p.setDate(new Date());
 		p.setDoctor(Database.getInstance().getLoggedIn().getUsername());
 		p.setId(Database.getInstance().getPrescriptions().size() + 1);
+		p.setTotalPrice(totalPrice(p));
 		Database.getInstance().setPrescription(new Prescription());
 		Database.getInstance().getPrescriptions().add(p);
 	}

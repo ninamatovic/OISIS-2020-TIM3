@@ -1,5 +1,6 @@
 package team3.view.admin;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +27,7 @@ public class PrescriptionTableModel extends AbstractTableModel {
 
 	@Override
 	public boolean isCellEditable(int rowIndex, int columnIndex) {
-		return columnIndex==5;
+		return columnIndex == 5;
 	}
 
 	@Override
@@ -52,7 +53,7 @@ public class PrescriptionTableModel extends AbstractTableModel {
 		case 2:
 			return String.class;
 		case 1:
-			return Date.class;
+			return String.class;
 		case 4:
 			return Float.class;
 		case 5:
@@ -71,7 +72,10 @@ public class PrescriptionTableModel extends AbstractTableModel {
 			return med.getId();
 
 		case 1:
-			return med.getDate();
+
+			SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+
+			return f.format(med.getDate());
 
 		case 2:
 			return med.getDoctor();
@@ -86,11 +90,11 @@ public class PrescriptionTableModel extends AbstractTableModel {
 
 		return null;
 	}
-	
+
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-	 database.getPrescriptions().get(rowIndex).setRemoved((boolean) aValue);
-		
+		database.getPrescriptions().get(rowIndex).setRemoved((boolean) aValue);
+
 	}
 
 }

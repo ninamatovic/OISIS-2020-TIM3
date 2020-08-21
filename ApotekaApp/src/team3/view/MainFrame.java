@@ -1,7 +1,10 @@
 package team3.view;
 
+import java.awt.Component;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 
 import team3.Database;
 import team3.model.Medicine;
@@ -9,6 +12,7 @@ import team3.model.Prescription;
 import team3.model.User;
 import team3.view.admin.AdmDodavanjeLeka;
 import team3.view.admin.AdmIzvestaj;
+import team3.view.admin.AdmPretragaRecepata;
 import team3.view.admin.AdmRegistracija;
 import team3.view.admin.AdmSpisakKorisnika;
 import team3.view.admin.AdmSpisakLekova;
@@ -17,6 +21,7 @@ import team3.view.admin.AdminDetaljiRecepta;
 import team3.view.doctor.LekarDetaljiRecepta;
 import team3.view.doctor.LekarDodavanjeLekaURecept;
 import team3.view.doctor.LekarKreiranjeRecepta;
+import team3.view.doctor.LekarPretragaRecepata;
 import team3.view.doctor.LekarSpisakLekova;
 import team3.view.doctor.LekarSpisakRecepata;
 import team3.view.pharmacist.ApProdajaLek;
@@ -53,7 +58,6 @@ public class MainFrame extends JFrame {
 		JPanel panel = (JPanel) new ApProdajaLek(me);
 		// JPanel panel = (JPanel) new LekarKreiranjeRecepta();
 		lastFrame = panel;
-		adjustSize(panel);
 		add((panel));
 
 	}
@@ -63,7 +67,6 @@ public class MainFrame extends JFrame {
 		JPanel panel = (JPanel) new LogIn();
 		// JPanel panel = (JPanel) new LekarKreiranjeRecepta();
 		lastFrame = panel;
-		adjustSize(panel);
 		add((panel));
 	}
 
@@ -85,7 +88,6 @@ public class MainFrame extends JFrame {
 	public void showRegistrationPage() {
 		getContentPane().removeAll();
 		JPanel panel = (JPanel) new AdmRegistracija();
-		adjustSize(panel);
 		add(panel);
 	}
 
@@ -93,7 +95,6 @@ public class MainFrame extends JFrame {
 		getContentPane().removeAll();
 		JPanel panel = (JPanel) new AdmSpisakKorisnika();
 		lastFrame = panel;
-		adjustSize(panel);
 		add(panel);
 	}
 
@@ -111,14 +112,12 @@ public class MainFrame extends JFrame {
 		} else
 			panel = new ApotekarSpisakLekova();
 		lastFrame = panel;
-		adjustSize(panel);
 		add(panel);
 	}
 
 	public void showNewMedicinePage() {
 		getContentPane().removeAll();
 		JPanel panel = (JPanel) new AdmDodavanjeLeka();
-		adjustSize(panel);
 		add(panel);
 	}
 
@@ -127,14 +126,11 @@ public class MainFrame extends JFrame {
 
 		add(lastFrame);
 
-		adjustSize(lastFrame);
-
 	}
 
 	public void showAddMedicineToPrescription() {
 		getContentPane().removeAll();
 		JPanel panel = (JPanel) new LekarDodavanjeLekaURecept();
-		adjustSize(panel);
 		add(panel);
 
 	}
@@ -151,15 +147,13 @@ public class MainFrame extends JFrame {
 			panel = (JPanel) new LekarSpisakRecepata();
 
 		}
-
-		adjustSize(panel);
+		lastFrame = panel;
 		add(panel);
 	}
 
 	public void showNewRecipe() {
 		getContentPane().removeAll();
 		JPanel panel = (JPanel) new LekarKreiranjeRecepta();
-		adjustSize(panel);
 		lastFrame = panel;
 		add(panel);
 
@@ -178,14 +172,37 @@ public class MainFrame extends JFrame {
 
 		getContentPane().removeAll();
 
-		adjustSize(panel);
 		add(panel);
 	}
 
 	public void showReports() {
 		getContentPane().removeAll();
 		JPanel panel = (JPanel) new AdmIzvestaj();
-		adjustSize(panel);
 		add(panel);
+	}
+
+	public void searchPrescriptions(JTable table) {
+		User u = Database.getInstance().getLoggedIn();
+		getContentPane().removeAll();
+		JPanel panel = null;
+		if (u.getRole().equals("Admin")) {
+
+			panel = (JPanel) new AdmPretragaRecepata(table);
+
+		} else if (u.getRole().equals("Lekar")) {
+			panel = (JPanel) new LekarPretragaRecepata(table);
+
+		}
+
+		add(panel);
+
+	}
+
+	@Override
+	public Component add(Component comp) {
+		Component c = super.add(comp);
+		if (comp instanceof JPanel)
+			adjustSize((JPanel) comp);
+		return c;
 	}
 }

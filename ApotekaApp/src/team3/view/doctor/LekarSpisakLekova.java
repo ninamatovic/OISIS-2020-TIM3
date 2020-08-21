@@ -16,7 +16,6 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
-import javax.swing.RowFilter.Entry;
 import javax.swing.border.BevelBorder;
 
 import team3.controller.MedicineController;

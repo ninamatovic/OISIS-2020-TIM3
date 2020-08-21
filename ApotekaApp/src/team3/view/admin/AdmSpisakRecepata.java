@@ -107,6 +107,11 @@ public class AdmSpisakRecepata extends JPanel {
 
 
 		JButton btnPretraga = new JButton("Pretraga");
+		btnPretraga.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().searchPrescriptions(table);
+			}
+		});
 		btnPretraga.setBounds(440, 130, 130, 49);
 		panel.add(btnPretraga);
 		btnPretraga.setForeground(Color.WHITE);

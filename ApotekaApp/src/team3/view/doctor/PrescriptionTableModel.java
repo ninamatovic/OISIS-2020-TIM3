@@ -1,5 +1,6 @@
 package team3.view.doctor;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -51,7 +52,7 @@ public class PrescriptionTableModel extends AbstractTableModel {
 		case 2:
 			return String.class;
 		case 1:
-			return Date.class;
+			return String.class;
 		case 4:
 			return Float.class;
 
@@ -68,7 +69,8 @@ public class PrescriptionTableModel extends AbstractTableModel {
 			return med.getId();
 
 		case 1:
-			return med.getDate();
+			SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+			return f.format(med.getDate());
 
 		case 2:
 			return med.getDoctor();

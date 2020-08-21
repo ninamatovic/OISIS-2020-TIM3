@@ -136,6 +136,18 @@ public class LekarSpisakRecepata extends JPanel {
 		 */
 
 		setBounds(100, 100, 800, 500);
+		
+		JButton btnPretraga = new JButton("Pretraga");
+		btnPretraga.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().searchPrescriptions(table);
+			}
+		});
+		btnPretraga.setForeground(Color.WHITE);
+		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		btnPretraga.setBackground(new Color(51, 102, 102));
+		btnPretraga.setBounds(355, 64, 133, 43);
+		add(btnPretraga);
 
 		DefaultRowSorter sorter = ((DefaultRowSorter) table.getRowSorter());
 		ArrayList list = new ArrayList();
