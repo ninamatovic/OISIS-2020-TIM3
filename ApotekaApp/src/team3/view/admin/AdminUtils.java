@@ -21,13 +21,6 @@ public class AdminUtils {
 		lblNewLabel.setBounds(40, 0, 149, 148);
 		panel.add(lblNewLabel);
 
-		JButton button = new JButton("Pocetna");
-		button.setForeground(UIManager.getColor("JButton.highlight"));
-		button.setBackground(new Color(0, 128, 128));
-		button.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		button.setBounds(30, 154, 171, 45);
-		panel.add(button);
-
 		JButton button_1 = new JButton("Lekovi");
 		button_1.setForeground(Color.WHITE);
 		button_1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
@@ -49,7 +42,7 @@ public class AdminUtils {
 		button_2.setBackground(new Color(0, 128, 128));
 		button_2.setBounds(30, 319, 171, 45);
 		panel.add(button_2);
-		
+
 		button_2.addActionListener(new ActionListener() {
 
 			@Override
@@ -57,7 +50,6 @@ public class AdminUtils {
 				MainFrame.getInstance().showRecipes();
 			}
 		});
-
 
 		JButton button_3 = new JButton("Korisnici");
 		button_3.setForeground(Color.WHITE);
@@ -73,13 +65,6 @@ public class AdminUtils {
 				MainFrame.getInstance().showUsers();
 			}
 		});
-
-		JButton button_4 = new JButton("Korpa");
-		button_4.setForeground(Color.WHITE);
-		button_4.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		button_4.setBackground(new Color(0, 128, 128));
-		button_4.setBounds(30, 484, 171, 45);
-		panel.add(button_4);
 
 		JButton button_5 = new JButton("Izloguj se");
 		button_5.setForeground(Color.WHITE);

@@ -25,7 +25,7 @@ public class MedicineTableModel extends AbstractTableModel {
 
 	@Override
 	public boolean isCellEditable(int rowIndex, int columnIndex) {
-		return false;
+		return rowIndex != 0 && database.getLoggedIn().getRole().equals("Apotekar");
 	}
 
 	@Override
@@ -80,6 +80,38 @@ public class MedicineTableModel extends AbstractTableModel {
 		}
 
 		return null;
+	}
+
+	@Override
+	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+		// super.setValueAt(aValue, rowIndex, columnIndex);
+		Medicine med = database.getMedicine().get(rowIndex);
+		switch (columnIndex) {
+		case 0:
+			return;
+		case 1:
+			String v = (String) aValue;
+			if (!v.equals(""))
+				med.setName(v);
+			break;
+		case 2:
+			String v1 = (String) aValue;
+			med.setMadeBy(v1);
+			break;
+		case 3:
+
+			med.setPrescription((boolean) aValue);
+			break;
+		case 4:
+			Float price = (Float) aValue;
+			if (price > 0)
+				med.setPrice(price);
+			break;
+		case 5:
+			med.setRemoved((boolean) aValue);
+			break;
+
+		}
 	}
 
 }

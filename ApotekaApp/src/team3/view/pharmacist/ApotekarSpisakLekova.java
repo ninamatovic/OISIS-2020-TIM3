@@ -17,6 +17,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
 import team3.Database;
+import team3.controller.MedicineController;
 import team3.model.Medicine;
 import team3.view.MainFrame;
 import team3.view.doctor.MedicineTableModel;
@@ -107,8 +108,8 @@ public class ApotekarSpisakLekova extends JPanel {
 					JOptionPane.showMessageDialog(null, "Lek se može izdavati samo na recept");
 					return;
 				}
-				//TODO
-
+				Medicine me=Database.getInstance().getMedicine().get(selected);
+				MainFrame.getInstance().showCart(me);
 			}
 		});
 		btnUKorpu.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));

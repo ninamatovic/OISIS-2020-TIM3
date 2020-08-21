@@ -51,4 +51,10 @@ public class MedicineController {
 				.orElse(null);
 	}
 
+	public static Medicine[] getNoPrescription() {
+		return (Medicine[]) Database.getInstance().getMedicine().stream()
+				.filter(item -> !item.isRemoved() && !item.isPrescription()).collect(Collectors.toList())
+				.toArray(new Medicine[0]);
+	}
+
 }

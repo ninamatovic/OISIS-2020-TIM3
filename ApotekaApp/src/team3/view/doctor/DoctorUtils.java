@@ -17,13 +17,6 @@ import team3.view.MainFrame;
 public class DoctorUtils {
 	public static void addSidebar(JPanel panel) {
 
-		JButton btnPocetna = new JButton("Po\u010Detna");
-		btnPocetna.setBounds(30, 110, 150, 40);
-		btnPocetna.setBackground(new Color(51, 102, 102));
-		btnPocetna.setForeground(new Color(255, 255, 255));
-		btnPocetna.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPocetna.setFocusPainted(false);
-
 		JButton btnLekovi = new JButton("Lekovi");
 		btnLekovi.setBounds(30, 170, 150, 40);
 		btnLekovi.setForeground(Color.WHITE);
@@ -83,7 +76,6 @@ public class DoctorUtils {
 		BtnDodajRecept.setFocusPainted(false);
 		BtnDodajRecept.setBackground(new Color(51, 102, 102));
 
-		panel.add(btnPocetna);
 		panel.add(btnLekovi);
 		panel.add(btnRecepti);
 		panel.add(BtnDodajRecept);

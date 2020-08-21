@@ -28,7 +28,6 @@ public class AdmSpisakKorisnika extends JPanel {
 	 */
 	private static final long serialVersionUID = -7548570708207322324L;
 	private JTable table;
-	private JTextField textField;
 
 	public AdmSpisakKorisnika() {
 		setPreferredSize(new Dimension(904, 626));
@@ -55,28 +54,12 @@ public class AdmSpisakKorisnika extends JPanel {
 		table.getColumnModel().getColumn(2).setPreferredWidth(25);
 		scrollPane.setViewportView(table);
 
-
-		JLabel lblNewLabel_2 = new JLabel("Pretraga:");
-		lblNewLabel_2.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-		lblNewLabel_2.setBounds(286, 154, 84, 45);
-		panel.add(lblNewLabel_2);
-
-		textField = new JTextField();
-		textField.setBounds(374, 161, 329, 28);
-		panel.add(textField);
-		textField.setColumns(10);
-
 		
 		JLabel lblNewLabel_1 = new JLabel("Korisnici");
 		lblNewLabel_1.setForeground(Color.BLACK);
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
 		lblNewLabel_1.setBounds(248, -14, 240, 111);
 		panel.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_3 = new JLabel("Lista korisnika ");
-		lblNewLabel_3.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
-		lblNewLabel_3.setBounds(248, 96, 171, 28);
-		panel.add(lblNewLabel_3);
 
 		/*
 		 * JLabel lblNewLabel_3_1 = new JLabel("Registracija ");
@@ -88,7 +71,7 @@ public class AdmSpisakKorisnika extends JPanel {
 		a.setForeground(Color.WHITE);
 		a.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		a.setBackground(new Color(0, 128, 128));
-		a.setBounds(423, 96, 171, 28);
+		a.setBounds(286, 125, 171, 51);
 		a.addActionListener(new ActionListener() {
 
 			@Override

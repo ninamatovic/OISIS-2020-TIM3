@@ -49,4 +49,9 @@ public class PrescriptionController {
 		return ret;
 	}
 
+	public static Prescription getById(int id) {
+		return Database.getInstance().getPrescriptions().stream().filter(p -> !p.isRemoved() && p.getId() == id)
+				.findFirst().orElse(null);
+	}
+
 }

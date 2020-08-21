@@ -20,12 +20,17 @@ public class SellController {
 			if (item.getMedId().equals(med.getId())) {
 				int q = item.getQuantity();
 				float p = item.getPrice();
-				p = (q + quantity) * (p / q);
-				item.setQuantity(quantity);
+				p = (q + quantity) * med.getPrice();
+				item.setQuantity(quantity + q);
 				item.setPrice(p);
+				return;
 			}
 		}
-
+		SellInfoItem item = new SellInfoItem();
+		item.setMedId(med.getId());
+		item.setPrice(med.getPrice());
+		item.setQuantity(quantity);
+		cart.getItems().add(item);
 	}
 
 	public static void addPrescriptionToCart(Prescription r) {

@@ -17,13 +17,6 @@ import team3.view.MainFrame;
 public class PharmacistUtils {
 	public static void addSidebar(JPanel panel) {
 
-		JButton btnPocetna = new JButton("Po\u010Detna");
-		btnPocetna.setBounds(30, 110, 150, 40);
-		btnPocetna.setBackground(new Color(51, 102, 102));
-		btnPocetna.setForeground(new Color(255, 255, 255));
-		btnPocetna.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnPocetna.setFocusPainted(false);
-
 		JButton btnLekovi = new JButton("Lekovi");
 		btnLekovi.setBounds(30, 170, 150, 40);
 		btnLekovi.setForeground(Color.WHITE);
@@ -55,9 +48,8 @@ public class PharmacistUtils {
 			}
 		});
 
-		panel.add(btnPocetna);
 		panel.add(btnLekovi);
-		panel.add(btnRecepti);
+		//panel.add(btnRecepti);
 
 		JButton BtnIzlogujSe = new JButton("Izloguj se");
 		BtnIzlogujSe.setBackground(new Color(51, 102, 102));
@@ -87,6 +79,13 @@ public class PharmacistUtils {
 		button_4.setBackground(new Color(0, 128, 128));
 		button_4.setBounds(30, 484, 171, 45);
 		panel.add(button_4);
+		button_4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().showCart(null);
+			}
+		});
 
 		// -----
 

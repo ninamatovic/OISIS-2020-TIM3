@@ -21,6 +21,8 @@ public class Medicine {
 	}
 
 	public void setName(String name) {
+		if (name == null || name.equals(""))
+			return;
 		this.name = name;
 	}
 
@@ -29,6 +31,8 @@ public class Medicine {
 	}
 
 	public void setMadeBy(String madeBy) {
+		if (madeBy == null || madeBy.equals(""))
+			return;
 		this.madeBy = madeBy;
 	}
 

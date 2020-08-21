@@ -49,21 +49,11 @@ public class AdmRegistracija extends JPanel {
 
 		AdminUtils.addSidebar(panel);
 
-		JLabel lblNewLabel_1 = new JLabel("Korisnici");
+		JLabel lblNewLabel_1 = new JLabel("Registracija");
 		lblNewLabel_1.setForeground(Color.BLACK);
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
-		lblNewLabel_1.setBounds(248, -14, 240, 111);
+		lblNewLabel_1.setBounds(249, -13, 367, 111);
 		panel.add(lblNewLabel_1);
-
-		JLabel lblNewLabel_3 = new JLabel("Lista korisnika ");
-		lblNewLabel_3.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
-		lblNewLabel_3.setBounds(248, 96, 171, 28);
-		panel.add(lblNewLabel_3);
-
-		JLabel lblNewLabel_3_1 = new JLabel("Registracija ");
-		lblNewLabel_3_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
-		lblNewLabel_3_1.setBounds(423, 96, 171, 28);
-		panel.add(lblNewLabel_3_1);
 
 		JLabel lblNewLabel_2 = new JLabel("Ime:");
 		lblNewLabel_2.setFont(new Font("Comic Sans MS", Font.BOLD, 26));

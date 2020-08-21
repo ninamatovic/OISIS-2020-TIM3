@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import team3.Database;
+import team3.model.Medicine;
 import team3.model.Prescription;
 import team3.model.User;
 import team3.view.admin.AdmDodavanjeLeka;
@@ -17,6 +18,8 @@ import team3.view.doctor.LekarDodavanjeLekaURecept;
 import team3.view.doctor.LekarKreiranjeRecepta;
 import team3.view.doctor.LekarSpisakLekova;
 import team3.view.doctor.LekarSpisakRecepata;
+import team3.view.pharmacist.ApProdajaLek;
+import team3.view.pharmacist.ApotekarSpisakLekova;
 
 public class MainFrame extends JFrame {
 	private static MainFrame instance;
@@ -39,7 +42,19 @@ public class MainFrame extends JFrame {
 			showUsers();
 		} else if (role.equals("Lekar")) {
 			showRecipes();
+		} else {
+			showCart(null);
 		}
+	}
+
+	public void showCart(Medicine me) {
+		getContentPane().removeAll();
+		JPanel panel = (JPanel) new ApProdajaLek(me);
+		// JPanel panel = (JPanel) new LekarKreiranjeRecepta();
+		lastFrame = panel;
+		adjustSize(panel);
+		add((panel));
+
 	}
 
 	public void handleLogout() {
@@ -85,8 +100,9 @@ public class MainFrame extends JFrame {
 		} else if (u.getRole().equals("Lekar")) {
 			panel = (JPanel) new LekarSpisakLekova();
 
-		}
-
+		} else
+			panel = new ApotekarSpisakLekova();
+		lastFrame = panel;
 		adjustSize(panel);
 		add(panel);
 	}
