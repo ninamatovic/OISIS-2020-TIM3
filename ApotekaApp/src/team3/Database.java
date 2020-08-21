@@ -1,5 +1,13 @@
 package team3;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,10 +17,10 @@ import team3.model.SellInfo;
 import team3.model.User;
 
 public class Database {
-	private List<User> users = new LinkedList<>();
-	private List<Medicine> medicine = new LinkedList<>();
-	private List<Prescription> prescriptions = new LinkedList<Prescription>();
-	private List<SellInfo> sells = new LinkedList<>();
+	private List<User> users;
+	private List<Medicine> medicine;
+	private List<Prescription> prescriptions;
+	private List<SellInfo> sells;
 	private Prescription prescription = new Prescription();// recept koji se trenutno pravi
 
 	private SellInfo cart = new SellInfo();
@@ -25,18 +33,34 @@ public class Database {
 	private User loggedIn;
 
 	private Database() {
-		User u = new User();
-		u.setUsername("admin");
-		u.setPassword("admin");
-		u.setRole("Admin");
-		users.add(u);
-		Medicine med = new Medicine();
-		med.setId("a");
-		med.setMadeBy("asd");
-		med.setName("name");
-		med.setPrice(45);
-		med.setRemoved(false);
-		medicine.add(med);
+		users = (List<User>) load("./users.data");
+		if (users == null) {
+			users = new LinkedList<>();
+			User u = new User();
+			u.setUsername("admin");
+			u.setFirstName("admin");
+			u.setLastName("admin");
+			u.setPassword("admin");
+			u.setRole("Admin");
+			users.add(u);
+		}
+		medicine = (List<Medicine>) load("./medicine.data");
+		if (medicine == null)
+			medicine = new LinkedList<>();
+
+		prescriptions = (List<Prescription>) load("./prescriptions.data");
+		if (prescriptions == null)
+			prescriptions = new LinkedList<>();
+
+		sells = (List<SellInfo>) load("./sells.data");
+		if (sells == null)
+			sells = new LinkedList<>();
+		/*
+		 * Medicine med = new Medicine(); med.setId("a"); med.setMadeBy("asd");
+		 * med.setName("name"); med.setPrice(45); med.setRemoved(false);
+		 * medicine.add(med);
+		 */
+
 	}
 
 	public static Database getInstance() {
@@ -81,4 +105,43 @@ public class Database {
 		this.cart = cart;
 	}
 
+	public static void save(Object what, String where) {
+		File f = new File(where);
+		ObjectOutputStream objOutStream = null;
+		try {
+			objOutStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(f)));
+			objOutStream.writeObject(what);
+		} catch (IOException e1) {
+		} finally {
+
+			try {
+				if (objOutStream != null)
+					objOutStream.close();
+			} catch (Exception e) {
+			}
+		}
+	}
+
+	private static Object load(String where) {
+		File f = new File(where);
+		ObjectInputStream objInStream = null;
+		Object ret = null;
+		try {
+			objInStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(f)));
+			ret = objInStream.readObject();
+		} catch (Exception e) {
+			System.out.println();
+		} finally {
+			try {
+				if (objInStream != null)
+					objInStream.close();
+			} catch (Exception e) {
+			}
+		}
+		return ret;
+	}
+
+	public void restart() {
+		instance = new Database();
+	}
 }

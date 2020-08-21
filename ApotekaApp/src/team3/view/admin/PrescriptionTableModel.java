@@ -94,6 +94,7 @@ public class PrescriptionTableModel extends AbstractTableModel {
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		database.getPrescriptions().get(rowIndex).setRemoved((boolean) aValue);
+		Database.save(database.getPrescriptions(), "./prescriptions.data");
 
 	}
 

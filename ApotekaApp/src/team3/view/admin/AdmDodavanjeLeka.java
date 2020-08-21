@@ -49,24 +49,6 @@ public class AdmDodavanjeLeka extends JPanel {
 
 		AdminUtils.addSidebar(panel);
 
-		JLabel lblNewLabel_3 = new JLabel("Lista lekova ");
-		lblNewLabel_3.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
-		lblNewLabel_3.setBounds(248, 96, 171, 28);
-		panel.add(lblNewLabel_3);
-
-		JButton lblNewLabel_3_1 = new JButton("Dodaj novi");
-		lblNewLabel_3_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
-		lblNewLabel_3_1.setBounds(392, 96, 171, 28);
-		panel.add(lblNewLabel_3_1);
-
-		lblNewLabel_3_1.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.getInstance().showNewMedicinePage();
-			}
-		});
-
 		JLabel lblNewLabel_2 = new JLabel("Naziv:");
 		lblNewLabel_2.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
 		lblNewLabel_2.setBounds(380, 183, 88, 37);
@@ -121,11 +103,6 @@ public class AdmDodavanjeLeka extends JPanel {
 		button_6_1.setBackground(new Color(102, 205, 170));
 		button_6_1.setBounds(444, 513, 125, 37);
 		panel.add(button_6_1);
-
-		JLabel lblNewLabel_3_2 = new JLabel("Izmeni postojeci");
-		lblNewLabel_3_2.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
-		lblNewLabel_3_2.setBounds(528, 96, 171, 28);
-		panel.add(lblNewLabel_3_2);
 
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);

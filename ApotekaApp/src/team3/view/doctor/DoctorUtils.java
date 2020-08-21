@@ -18,21 +18,21 @@ public class DoctorUtils {
 	public static void addSidebar(JPanel panel) {
 
 		JButton btnLekovi = new JButton("Lekovi");
-		btnLekovi.setBounds(30, 170, 150, 40);
+		btnLekovi.setBounds(25, 170, 155, 40);
 		btnLekovi.setForeground(Color.WHITE);
 		btnLekovi.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		btnLekovi.setFocusPainted(false);
 		btnLekovi.setBackground(new Color(51, 102, 102));
 
 		JButton btnRecepti = new JButton("Recepti");
-		btnRecepti.setBounds(30, 230, 150, 40);
+		btnRecepti.setBounds(25, 230, 155, 40);
 		btnRecepti.setForeground(Color.WHITE);
 		btnRecepti.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		btnRecepti.setFocusPainted(false);
 		btnRecepti.setBackground(new Color(51, 102, 102));
 
 		JButton BtnDodajRecept = new JButton("Kreiraj recept");
-		BtnDodajRecept.setBounds(30, 290, 150, 40);
+		BtnDodajRecept.setBounds(25, 290, 155, 40);
 		BtnDodajRecept.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}

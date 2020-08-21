@@ -1,10 +1,11 @@
 package team3.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SellInfo {
+public class SellInfo implements Serializable{
 	private String buyer, seller;
 	private float price;
 	private int percentOff;

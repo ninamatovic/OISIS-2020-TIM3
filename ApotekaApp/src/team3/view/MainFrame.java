@@ -37,7 +37,7 @@ public class MainFrame extends JFrame {
 	private MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		handleLogout();
-		//setResizable(false);
+		// setResizable(false);
 	}
 
 	public static MainFrame getInstance() {
@@ -66,6 +66,7 @@ public class MainFrame extends JFrame {
 	}
 
 	public void handleLogout() {
+		Database.getInstance().restart();
 		getContentPane().removeAll();
 		JPanel panel = (JPanel) new LogIn();
 		// JPanel panel = (JPanel) new LekarKreiranjeRecepta();

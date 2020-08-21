@@ -87,6 +87,8 @@ public class UserTableModel extends AbstractTableModel {
 			return;
 		}
 		database.getUsers().get(rowIndex).setRemoved((boolean) aValue);
+		Database.save(database.getUsers(), "./users.data");
+
 	}
 
 }

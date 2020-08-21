@@ -112,6 +112,8 @@ public class MedicineTableModel extends AbstractTableModel {
 			break;
 
 		}
+		Database.save(database.getMedicine(), "./medicine.data");
+
 	}
 
 }

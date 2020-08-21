@@ -1,8 +1,11 @@
 package team3.model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 	private String username, firstName, lastName, role, password;
-	private boolean removed=false;
+	private boolean removed = false;
+
 	public User() {
 	}
 
@@ -54,5 +57,4 @@ public class User {
 		this.removed = removed;
 	}
 
-	
 }

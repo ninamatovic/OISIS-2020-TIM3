@@ -1,10 +1,11 @@
 package team3.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Prescription {
+public class Prescription implements Serializable {
 
 	private int id;
 	private String doctor, patientId;

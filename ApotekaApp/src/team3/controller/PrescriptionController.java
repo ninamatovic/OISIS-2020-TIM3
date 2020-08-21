@@ -26,6 +26,7 @@ public class PrescriptionController {
 		p.setTotalPrice(totalPrice(p));
 		Database.getInstance().setPrescription(new Prescription());
 		Database.getInstance().getPrescriptions().add(p);
+		Database.save(Database.getInstance().getPrescriptions(), "./prescriptions.data");
 	}
 
 	public static void remove(int r) {

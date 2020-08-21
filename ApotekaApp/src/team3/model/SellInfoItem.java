@@ -1,6 +1,8 @@
 package team3.model;
 
-public class SellInfoItem {
+import java.io.Serializable;
+
+public class SellInfoItem implements Serializable{
 	private String medId;
 	private int quantity;
 	private float price;

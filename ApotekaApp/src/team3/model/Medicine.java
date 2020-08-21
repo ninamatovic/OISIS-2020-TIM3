@@ -1,6 +1,8 @@
 package team3.model;
 
-public class Medicine {
+import java.io.Serializable;
+
+public class Medicine implements Serializable {
 	private String id, name, madeBy;
 	private boolean removed = false, prescription;
 	private float price;

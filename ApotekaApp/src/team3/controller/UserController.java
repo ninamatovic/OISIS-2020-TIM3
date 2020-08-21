@@ -14,6 +14,8 @@ public class UserController {
 			return false;
 		Database d = Database.getInstance();
 		d.getUsers().add(u);
+		Database.save(d.getUsers(), "./users.data");
+
 		return true;
 	}
 

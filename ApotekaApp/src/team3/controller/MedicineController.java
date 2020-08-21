@@ -14,6 +14,7 @@ public class MedicineController {
 			return error;
 		Database d = Database.getInstance();
 		d.getMedicine().add(med);
+		Database.save(d.getMedicine(),"./medicine.data");
 		return "";
 	}
 

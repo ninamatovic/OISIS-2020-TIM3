@@ -67,6 +67,7 @@ public class SellController {
 		a.setPrice((float) (getTotalPrice() * (1 - a.getPercentOff() / 100.0)));
 		Database.getInstance().getSells().add(a);
 		Database.getInstance().setCart(new SellInfo());
+		Database.save(Database.getInstance().getSells(), "./sells.data");
 	}
 
 	public static float getTotalPrice() {
