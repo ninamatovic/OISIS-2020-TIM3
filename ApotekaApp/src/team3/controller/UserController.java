@@ -1,5 +1,8 @@
 package team3.controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import team3.Database;
 import team3.model.User;
 import team3.view.MainFrame;
@@ -55,6 +58,11 @@ public class UserController {
 		if (UserController.isUsernameTaken(u.getUsername()))
 			message += "Korisnièko ime vec posotji\r\n";
 		return message;
+	}
+
+	public static List<String> getAllPharmacists() {
+		return Database.getInstance().getUsers().stream().filter(user -> user.getRole().equals("Apotekar"))
+				.map(user -> user.getUsername()).distinct().collect(Collectors.toList());
 	}
 
 }

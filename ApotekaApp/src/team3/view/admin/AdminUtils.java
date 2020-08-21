@@ -58,6 +58,21 @@ public class AdminUtils {
 		button_3.setBounds(30, 399, 171, 45);
 		panel.add(button_3);
 
+		JButton button_4 = new JButton("Izveštaji");
+		button_4.setForeground(Color.WHITE);
+		button_4.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		button_4.setBackground(new Color(0, 128, 128));
+		button_4.setBounds(30, 399 + 80, 171, 45);
+		panel.add(button_4);
+
+		button_4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().showReports();
+			}
+		});
+
 		button_3.addActionListener(new ActionListener() {
 
 			@Override

@@ -57,4 +57,9 @@ public class MedicineController {
 				.toArray(new Medicine[0]);
 	}
 
+	public static List<String> geAllManuf() {
+		return Database.getInstance().getMedicine().stream().map(item -> item.getMadeBy()).distinct()
+				.collect(Collectors.toList());
+	}
+
 }

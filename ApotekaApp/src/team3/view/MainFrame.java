@@ -8,6 +8,7 @@ import team3.model.Medicine;
 import team3.model.Prescription;
 import team3.model.User;
 import team3.view.admin.AdmDodavanjeLeka;
+import team3.view.admin.AdmIzvestaj;
 import team3.view.admin.AdmRegistracija;
 import team3.view.admin.AdmSpisakKorisnika;
 import team3.view.admin.AdmSpisakLekova;
@@ -170,6 +171,13 @@ public class MainFrame extends JFrame {
 
 		getContentPane().removeAll();
 
+		adjustSize(panel);
+		add(panel);
+	}
+
+	public void showReports() {
+		getContentPane().removeAll();
+		JPanel panel = (JPanel) new AdmIzvestaj();
 		adjustSize(panel);
 		add(panel);
 	}

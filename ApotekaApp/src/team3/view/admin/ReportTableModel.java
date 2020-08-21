@@ -1,35 +1,35 @@
-package team3.view.pharmacist;
+package team3.view.admin;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Map.Entry;
 
 import javax.swing.table.AbstractTableModel;
 
-import team3.Database;
-import team3.model.Prescription;
-import team3.model.SellInfoItem;
+import team3.model.ReportItem;
 
-public class CartTableModel extends AbstractTableModel {
+public class ReportTableModel extends AbstractTableModel {
 
 	private static final long serialVersionUID = 2710362894062472488L;
-	private static Database database = Database.getInstance();
 	private List<String> kolone = new ArrayList<String>();
+	private List<ReportItem> report;
 
-	public CartTableModel() {
+	public ReportTableModel(List<ReportItem> report) {
 		kolone.add("Šifra leka");
+		this.report = report;
+		kolone.add("Naziv leka");
 		kolone.add("Kolièina");
-		kolone.add("Cena");
+		kolone.add("Profit");
 	}
 
 	@Override
 	public boolean isCellEditable(int rowIndex, int columnIndex) {
-		return false;
+		return false;// columnIndex >=4;
 	}
 
 	@Override
 	public int getRowCount() {
-		return database.getCart().getItems().size();
+		return report.size();
 	}
 
 	@Override
@@ -46,29 +46,35 @@ public class CartTableModel extends AbstractTableModel {
 	public Class<?> getColumnClass(int columnIndex) {
 		switch (columnIndex) {
 		case 0:
-
+			return String.class;
 		case 1:
 			return String.class;
 		case 2:
 			return Integer.class;
-
+		case 3:
+			return Float.class;
+		case 4:
+		default:
+			return null;
 		}
-		return null;
 	}
 
 	@Override
-
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		SellInfoItem med = database.getCart().getItems().get(rowIndex);
+		int i = 0;
+		ReportItem r = report.get(rowIndex);
+
 		switch (columnIndex) {
 		case 0:
-			return med.getMedId();
+			return r.getId();
 
 		case 1:
-			return med.getQuantity();
-
+			return r.getTitle();
 		case 2:
-			return med.getPrice();
+			return r.getQuantity();
+
+		case 3:
+			return r.getTotalPrice();
 
 		}
 

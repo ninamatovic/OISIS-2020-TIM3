@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.xml.crypto.Data;
+
 import team3.Database;
 import team3.model.Medicine;
 import team3.model.Prescription;
@@ -59,7 +61,7 @@ public class SellController {
 
 	public static void buy() {
 		SellInfo a = Database.getInstance().getCart();
-
+		a.setSeller(Database.getInstance().getLoggedIn().getUsername());
 		a.setDate(new Date());
 		a.setPercentOff(calculatePercentOff(a.getBuyer()));
 		a.setPrice((float) (getTotalPrice() * (1 - a.getPercentOff() / 100.0)));
@@ -70,7 +72,7 @@ public class SellController {
 	public static float getTotalPrice() {
 		float total = 0;
 		for (SellInfoItem a : Database.getInstance().getCart().getItems()) {
-			total += a.getPrice() * a.getQuantity();
+			total += a.getPrice();
 		}
 		return total;
 	}

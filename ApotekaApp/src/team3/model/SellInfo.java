@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class SellInfo {
-	private String buyer;
+	private String buyer, seller;
 	private float price;
 	private int percentOff;
 	private List<SellInfoItem> items = new LinkedList<SellInfoItem>();
@@ -45,6 +45,14 @@ public class SellInfo {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getSeller() {
+		return seller;
+	}
+
+	public void setSeller(String seller) {
+		this.seller = seller;
 	}
 
 }
