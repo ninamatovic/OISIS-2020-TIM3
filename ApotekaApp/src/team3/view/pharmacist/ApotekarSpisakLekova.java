@@ -97,6 +97,11 @@ public class ApotekarSpisakLekova extends JPanel {
 		table.setBackground(new Color(204, 204, 255));
 
 		JButton btnPretraga = new JButton("Pretraga");
+		btnPretraga.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().searchMedicine(table);
+			}
+		});
 		btnPretraga.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
 		btnPretraga.setBounds(479, 107, 171, 45);
 		panel.add(btnPretraga);

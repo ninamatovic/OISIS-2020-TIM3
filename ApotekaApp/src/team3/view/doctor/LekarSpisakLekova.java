@@ -18,12 +18,16 @@ import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.border.BevelBorder;
 
+import team3.Main;
 import team3.controller.MedicineController;
+import team3.view.MainFrame;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LekarSpisakLekova extends JPanel {
 
 	private JTable table;
-	private JTextField textField;
 
 	public LekarSpisakLekova() {
 
@@ -36,25 +40,6 @@ public class LekarSpisakLekova extends JPanel {
 
 		add(lblNewLabel);
 		DoctorUtils.addSidebar(this);
-		JTextArea txtrPretraga = new JTextArea();
-		txtrPretraga.setText("Pretraga");
-		txtrPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-		txtrPretraga.setBackground(new Color(102, 153, 153));
-		txtrPretraga.setBounds(217, 78, 88, 27);
-		add(txtrPretraga);
-
-		textField = new JTextField();
-		textField.setBounds(292, 85, 303, 19);
-		add(textField);
-		textField.setColumns(10);
-
-		JButton btnIzlogujSe = new JButton("Izloguj se");
-		btnIzlogujSe.setForeground(new Color(255, 255, 255));
-		btnIzlogujSe.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		btnIzlogujSe.setFocusPainted(false);
-		btnIzlogujSe.setBackground(new Color(204, 204, 255));
-		btnIzlogujSe.setBounds(603, 29, 150, 40);
-		add(btnIzlogujSe);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setViewportBorder(null);
@@ -74,7 +59,6 @@ public class LekarSpisakLekova extends JPanel {
 		table.setBackground(new Color(204, 204, 255));
 		table.setAutoCreateRowSorter(true);
 
-
 		JLabel lblNewLabel_1 = new JLabel("Spisak Lekova");
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
 		lblNewLabel_1.setBounds(217, 20, 309, 46);
@@ -83,7 +67,20 @@ public class LekarSpisakLekova extends JPanel {
 		// setBackground(Color.WHITE);
 
 		setBounds(100, 100, 800, 500);
-		
+
+		JButton btnPretraga = new JButton("Pretraga");
+		btnPretraga.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().searchMedicine(table);
+			}
+		});
+		btnPretraga.setForeground(Color.WHITE);
+		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		btnPretraga.setFocusPainted(false);
+		btnPretraga.setBackground(new Color(204, 204, 255));
+		btnPretraga.setBounds(251, 64, 150, 40);
+		add(btnPretraga);
+
 		DefaultRowSorter sorter = ((DefaultRowSorter) table.getRowSorter());
 		ArrayList list = new ArrayList();
 		sorter.setSortKeys(list);

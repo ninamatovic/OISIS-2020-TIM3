@@ -19,6 +19,7 @@ import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
+import team3.Main;
 import team3.view.MainFrame;
 
 public class AdmSpisakLekova extends JPanel {
@@ -93,8 +94,12 @@ public class AdmSpisakLekova extends JPanel {
 		table.setBackground(new Color(204, 204, 255));
 		table.setAutoCreateRowSorter(true);
 
-
 		JButton btnPretraga = new JButton("Pretraga");
+		btnPretraga.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.getInstance().searchMedicine(table);
+			}
+		});
 		btnPretraga.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
 		btnPretraga.setBounds(467, 115, 160, 50);
 		panel.add(btnPretraga);

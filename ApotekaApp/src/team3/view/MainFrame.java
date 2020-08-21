@@ -12,6 +12,7 @@ import team3.model.Prescription;
 import team3.model.User;
 import team3.view.admin.AdmDodavanjeLeka;
 import team3.view.admin.AdmIzvestaj;
+import team3.view.admin.AdmPretragaLekova;
 import team3.view.admin.AdmPretragaRecepata;
 import team3.view.admin.AdmRegistracija;
 import team3.view.admin.AdmSpisakKorisnika;
@@ -21,10 +22,12 @@ import team3.view.admin.AdminDetaljiRecepta;
 import team3.view.doctor.LekarDetaljiRecepta;
 import team3.view.doctor.LekarDodavanjeLekaURecept;
 import team3.view.doctor.LekarKreiranjeRecepta;
+import team3.view.doctor.LekarPretragaLekova;
 import team3.view.doctor.LekarPretragaRecepata;
 import team3.view.doctor.LekarSpisakLekova;
 import team3.view.doctor.LekarSpisakRecepata;
 import team3.view.pharmacist.ApProdajaLek;
+import team3.view.pharmacist.ApotekarPretragaLekova;
 import team3.view.pharmacist.ApotekarSpisakLekova;
 
 public class MainFrame extends JFrame {
@@ -34,7 +37,7 @@ public class MainFrame extends JFrame {
 	private MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		handleLogout();
-		// setResizable(false);
+		//setResizable(false);
 	}
 
 	public static MainFrame getInstance() {
@@ -118,6 +121,7 @@ public class MainFrame extends JFrame {
 	public void showNewMedicinePage() {
 		getContentPane().removeAll();
 		JPanel panel = (JPanel) new AdmDodavanjeLeka();
+		lastFrame = panel;
 		add(panel);
 	}
 
@@ -204,5 +208,25 @@ public class MainFrame extends JFrame {
 		if (comp instanceof JPanel)
 			adjustSize((JPanel) comp);
 		return c;
+	}
+
+	public void searchMedicine(JTable table) {
+		User u = Database.getInstance().getLoggedIn();
+		getContentPane().removeAll();
+		JPanel panel = null;
+		if (u.getRole().equals("Admin")) {
+
+			panel = (JPanel) new AdmPretragaLekova(table);
+
+		} else if (u.getRole().equals("Lekar")) {
+			panel = (JPanel) new LekarPretragaLekova(table);
+
+		} else {
+			panel = (JPanel) new ApotekarPretragaLekova(table);
+
+		}
+
+		add(panel);
+
 	}
 }
