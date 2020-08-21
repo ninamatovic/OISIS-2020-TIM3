@@ -85,6 +85,8 @@ public class LekarDetaljiRecepta extends JPanel {
 		 * Database.getInstance().getPrescription())); table.setBounds(10, 45, 538,
 		 * 206); panel.add(new JScrollPane(table)); // setBackground(Color.WHITE);
 		 */
+		table.setAutoCreateRowSorter(true);
+
 
 		setBounds(100, 100, 800, 500);
 

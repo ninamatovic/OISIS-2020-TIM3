@@ -62,6 +62,7 @@ public class AdminDetaljiRecepta extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		table.setAutoCreateRowSorter(true);
 
 		scrollPane.setViewportView(table);
 

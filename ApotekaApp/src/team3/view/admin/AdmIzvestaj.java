@@ -64,6 +64,7 @@ public class AdmIzvestaj extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		table.setAutoCreateRowSorter(true);
 
 		JLabel lblNewLabel_1 = new JLabel("Izveštaj");
 		lblNewLabel_1.setForeground(Color.BLACK);
@@ -72,7 +73,7 @@ public class AdmIzvestaj extends JPanel {
 		panel.add(lblNewLabel_1);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Ukupna prodaja svih lekova");
-		//rdbtnNewRadioButton.setEnabled(false);
+		// rdbtnNewRadioButton.setEnabled(false);
 		rdbtnNewRadioButton.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
 		rdbtnNewRadioButton.setBackground(new Color(95, 158, 160));
 		rdbtnNewRadioButton.setBounds(286, 82, 327, 23);

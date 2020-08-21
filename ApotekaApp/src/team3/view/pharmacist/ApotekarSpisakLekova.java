@@ -5,13 +5,19 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
+import javax.swing.DefaultRowSorter;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
+import javax.swing.RowSorter;
 import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
@@ -123,6 +129,7 @@ public class ApotekarSpisakLekova extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		table.setAutoCreateRowSorter(true);
 
 		lblNewLabel_3_1.setForeground(Color.WHITE);
 		lblNewLabel_3_1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
@@ -135,6 +142,24 @@ public class ApotekarSpisakLekova extends JPanel {
 		btnUKorpu.setForeground(Color.WHITE);
 		btnUKorpu.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		btnUKorpu.setBackground(new Color(0, 128, 128));
+		DefaultRowSorter sorter = ((DefaultRowSorter) table.getRowSorter());
+		// ArrayList list = new ArrayList();
+		// sorter.setSortKeys(list);
+		// sorter.sort();
 
+		List<RowFilter<Object, Object>> f = new LinkedList<>();
+		f.add(isDeletedFilter());// sakriva izbirsane
+		sorter.setRowFilter(RowFilter.andFilter(f));
+	}
+
+	public static RowFilter isDeletedFilter() {
+		return new RowFilter<Object, Object>() {
+			public boolean include(Entry<? extends Object, ? extends Object> entry) {
+				MedicineTableModel t = (MedicineTableModel) entry.getModel();
+				// adminu se sve prikaze, ostalima samo ako nije izbriano
+				String id = (String) t.getValueAt((int) entry.getIdentifier(), 0);
+				return !MedicineController.getById(id).isRemoved();
+			}
+		};
 	}
 }

@@ -63,6 +63,8 @@ public class AdmSpisakKorisnika extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		table.setAutoCreateRowSorter(true);
+
 
 		JLabel lblNewLabel_1 = new JLabel("Korisnici");
 		lblNewLabel_1.setForeground(Color.BLACK);

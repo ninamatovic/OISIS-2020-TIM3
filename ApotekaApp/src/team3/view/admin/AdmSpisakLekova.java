@@ -91,7 +91,9 @@ public class AdmSpisakLekova extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
-		
+		table.setAutoCreateRowSorter(true);
+
+
 		JButton btnPretraga = new JButton("Pretraga");
 		btnPretraga.setFont(new Font("Comic Sans MS", Font.ITALIC, 20));
 		btnPretraga.setBounds(467, 115, 160, 50);

@@ -9,6 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultRowSorter;
+
 import java.awt.GridBagLayout;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
@@ -18,22 +20,29 @@ import javax.swing.UIManager;
 import java.awt.SystemColor;
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.RowFilter.Entry;
 import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.table.DefaultTableModel;
 
 import team3.Database;
+import team3.controller.MedicineController;
+import team3.controller.PrescriptionController;
 import team3.view.MainFrame;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.RowFilter;
 
 public class LekarSpisakRecepata extends JPanel {
 
@@ -78,6 +87,8 @@ public class LekarSpisakRecepata extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		table.setAutoCreateRowSorter(true);
+
 
 		JButton lblNewLabel_1 = new JButton("Detalji");
 		lblNewLabel_1.setForeground(Color.WHITE);
@@ -110,7 +121,7 @@ public class LekarSpisakRecepata extends JPanel {
 
 		JLabel lblNewLabel_2 = new JLabel("Spisak recepata");
 		lblNewLabel_2.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
-		lblNewLabel_2.setForeground(new Color(0,0,51));
+		lblNewLabel_2.setForeground(new Color(0, 0, 51));
 		lblNewLabel_2.setBounds(217, 11, 309, 46);
 		add(lblNewLabel_2);
 
@@ -125,6 +136,27 @@ public class LekarSpisakRecepata extends JPanel {
 		 */
 
 		setBounds(100, 100, 800, 500);
+
+		DefaultRowSorter sorter = ((DefaultRowSorter) table.getRowSorter());
+		ArrayList list = new ArrayList();
+		sorter.setSortKeys(list);
+		sorter.sort();
+
+		List<RowFilter<Object, Object>> f = new LinkedList<>();
+		f.add(isDeletedFilter());// sakriva izbirsane
+		sorter.setRowFilter(RowFilter.andFilter(f));
+	}
+
+	public static RowFilter isDeletedFilter() {
+		return new RowFilter<Object, Object>() {
+			public boolean include(Entry<? extends Object, ? extends Object> entry) {
+				PrescriptionTableModel t = (PrescriptionTableModel) entry.getModel();
+				// adminu se sve prikaze, ostalima samo ako nije izbriano
+				int id = (int) t.getValueAt((int) entry.getIdentifier(), 0);
+				return !PrescriptionController.getById((id)).isRemoved();
+
+			}
+		};
 	}
 
 }

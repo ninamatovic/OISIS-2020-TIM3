@@ -103,7 +103,9 @@ public class AdmSpisakRecepata extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
-		
+		table.setAutoCreateRowSorter(true);
+
+
 		JButton btnPretraga = new JButton("Pretraga");
 		btnPretraga.setBounds(440, 130, 130, 49);
 		panel.add(btnPretraga);

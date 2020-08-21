@@ -92,6 +92,7 @@ public class ApProdajaLek extends JPanel {
 		table.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(0, 51, 102), new Color(0, 51, 102),
 				new Color(0, 51, 102), new Color(0, 51, 102)));
 		table.setBackground(new Color(204, 204, 255));
+		table.setAutoCreateRowSorter(true);
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(27, 5, 150, 112);
