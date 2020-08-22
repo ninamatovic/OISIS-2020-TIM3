@@ -70,7 +70,7 @@ public class PharmacistUtils {
 		// ---
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("/resources/img/LogoM.png"));
+		lblNewLabel.setIcon(new ImageIcon("./resources/img/LogoM.png"));
 		lblNewLabel.setBounds(40, 0, 149, 148);
 		panel.add(lblNewLabel);
 

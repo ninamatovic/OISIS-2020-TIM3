@@ -33,9 +33,9 @@ public class LekarSpisakLekova extends JPanel {
 
 		setBackground(new Color(102, 153, 153));
 
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(27, 5, 150, 112);
-		lblNewLabel.setIcon(new ImageIcon(("/resources/img/LogoM.png")));
+		JLabel lblNewLabel = new JLabel(new ImageIcon(("/resources/img/LogoM.png")));
+		lblNewLabel.setBounds(29, 11, 150, 112);
+	//	lblNewLabel.setIcon();
 		setLayout(null);
 
 		add(lblNewLabel);
@@ -77,7 +77,7 @@ public class LekarSpisakLekova extends JPanel {
 		btnPretraga.setForeground(Color.WHITE);
 		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		btnPretraga.setFocusPainted(false);
-		btnPretraga.setBackground(new Color(204, 204, 255));
+		btnPretraga.setBackground(new Color(51, 102, 102));
 		btnPretraga.setBounds(251, 64, 150, 40);
 		add(btnPretraga);
 

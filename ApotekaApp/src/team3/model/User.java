@@ -54,6 +54,8 @@ public class User implements Serializable {
 	}
 
 	public void setRemoved(boolean removed) {
+		if(username.equals("admin"))
+			return;//admin se ne moze izbrisati
 		this.removed = removed;
 	}
 

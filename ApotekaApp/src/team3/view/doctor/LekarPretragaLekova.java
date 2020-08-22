@@ -38,12 +38,10 @@ public class LekarPretragaLekova extends JPanel {
 
 		setBackground(new Color(102, 153, 153));
 
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(27, 5, 150, 112);
-		lblNewLabel.setIcon(new ImageIcon(("/resources/img/LogoM.png")));
+	
 		setLayout(null);
 
-		add(lblNewLabel);
+	
 		DoctorUtils.addSidebar(this);
 
 		JLabel lblNewLabel_1 = new JLabel("Pretraga lekova");
@@ -56,44 +54,52 @@ public class LekarPretragaLekova extends JPanel {
 		setBounds(100, 100, 800, 500);
 		ArrayList list = new ArrayList();
 		JButton btnNewButton = new JButton("Potvrdi");
-		btnNewButton.setBounds(484, 444, 104, 45);
+		btnNewButton.setBackground(new Color(102, 205, 170));
+		btnNewButton.setBounds(473, 372, 104, 45);
 		add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Otka\u017Ei");
-		btnNewButton_1.setBounds(622, 444, 117, 45);
+
+		btnNewButton_1.setBounds(611, 372, 117, 45);
+		btnNewButton_1.setBackground(new Color(255, 182, 193));
+
 		add(btnNewButton_1);
 
 		textField = new JTextField();
 		textField.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
-		textField.setBounds(534, 300, 187, 32);
+		textField.setBounds(523, 228, 187, 32);
 		add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
 		textField_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
-		textField_1.setBounds(534, 166, 187, 32);
+		textField_1.setBounds(523, 94, 187, 32);
 		add(textField_1);
 		textField_1.setColumns(10);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("\u0160ifra");
+		rdbtnNewRadioButton.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
-		rdbtnNewRadioButton.setBounds(298, 161, 187, 42);
+		rdbtnNewRadioButton.setBounds(287, 89, 187, 42);
 		rdbtnNewRadioButton.setSelected(true);
 		add(rdbtnNewRadioButton);
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Ime");
+		rdbtnNewRadioButton_1.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
-		rdbtnNewRadioButton_1.setBounds(298, 222, 187, 42);
+		rdbtnNewRadioButton_1.setBounds(287, 150, 187, 42);
 		add(rdbtnNewRadioButton_1);
 
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Proizvo\u0111a\u010D");
+		rdbtnNewRadioButton_2.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton_2.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
-		rdbtnNewRadioButton_2.setBounds(298, 294, 187, 45);
+		rdbtnNewRadioButton_2.setBounds(287, 222, 187, 45);
 		add(rdbtnNewRadioButton_2);
 
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Cena");
+		rdbtnNewRadioButton_3.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton_3.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
-		rdbtnNewRadioButton_3.setBounds(298, 370, 187, 46);
+		rdbtnNewRadioButton_3.setBounds(287, 298, 187, 46);
 		add(rdbtnNewRadioButton_3);
 
 		ButtonGroup bg = new ButtonGroup();
@@ -105,19 +111,19 @@ public class LekarPretragaLekova extends JPanel {
 		textField_2 = new JTextField();
 		textField_2.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		textField_2.setColumns(10);
-		textField_2.setBounds(534, 227, 187, 32);
+		textField_2.setBounds(523, 155, 187, 32);
 		add(textField_2);
 
 		textField_3 = new JTextField();
 		textField_3.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		textField_3.setColumns(10);
-		textField_3.setBounds(534, 377, 76, 32);
+		textField_3.setBounds(523, 305, 76, 32);
 		add(textField_3);
 
 		textField_4 = new JTextField();
 		textField_4.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		textField_4.setColumns(10);
-		textField_4.setBounds(644, 377, 76, 32);
+		textField_4.setBounds(633, 305, 76, 32);
 		add(textField_4);
 
 		JLabel label = new JLabel("-");

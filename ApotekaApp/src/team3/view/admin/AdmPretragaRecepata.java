@@ -85,42 +85,51 @@ public class AdmPretragaRecepata extends JPanel {
 		panel.add(lblNewLabel_1);
 
 		JButton btnNewButton = new JButton("Potvrdi");
-		btnNewButton.setBounds(484, 494, 104, 45);
+		// btnNewButton.setBackground(new Color(95, 158, 160));
+		btnNewButton.setBackground(new Color(255, 182, 193));
+		btnNewButton.setBounds(484, 447, 104, 32);
 		panel.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Otka\u017Ei");
-		btnNewButton_1.setBounds(618, 494, 117, 45);
+		btnNewButton_1.setBackground(new Color(255, 182, 193));
+		btnNewButton_1.setBounds(604, 447, 117, 32);
 		panel.add(btnNewButton_1);
 
 		textField = new JTextField();
+		textField.setBackground(Color.WHITE);
 		textField.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		textField.setBounds(534, 300, 187, 32);
 		panel.add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
+		textField_1.setBackground(Color.WHITE);
 		textField_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		textField_1.setBounds(534, 166, 187, 32);
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("\u0160ifra");
+		rdbtnNewRadioButton.setBackground(new Color(95, 158, 160));
 		rdbtnNewRadioButton.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		rdbtnNewRadioButton.setBounds(298, 161, 187, 42);
 		rdbtnNewRadioButton.setSelected(true);
 		panel.add(rdbtnNewRadioButton);
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Lekar");
+		rdbtnNewRadioButton_1.setBackground(new Color(95, 158, 160));
 		rdbtnNewRadioButton_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		rdbtnNewRadioButton_1.setBounds(298, 222, 187, 42);
 		panel.add(rdbtnNewRadioButton_1);
 
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("JMBG pacijenta");
+		rdbtnNewRadioButton_2.setBackground(new Color(95, 158, 160));
 		rdbtnNewRadioButton_2.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		rdbtnNewRadioButton_2.setBounds(298, 294, 187, 45);
 		panel.add(rdbtnNewRadioButton_2);
 
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Lek");
+		rdbtnNewRadioButton_3.setBackground(new Color(95, 158, 160));
 		rdbtnNewRadioButton_3.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		rdbtnNewRadioButton_3.setBounds(298, 370, 187, 46);
 		panel.add(rdbtnNewRadioButton_3);
@@ -132,12 +141,14 @@ public class AdmPretragaRecepata extends JPanel {
 		bg.add(rdbtnNewRadioButton_1);
 
 		textField_2 = new JTextField();
+		textField_2.setBackground(Color.WHITE);
 		textField_2.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		textField_2.setColumns(10);
 		textField_2.setBounds(534, 227, 187, 32);
 		panel.add(textField_2);
 
 		textField_3 = new JTextField();
+		textField_3.setBackground(Color.WHITE);
 		textField_3.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		textField_3.setColumns(10);
 		textField_3.setBounds(534, 377, 187, 32);

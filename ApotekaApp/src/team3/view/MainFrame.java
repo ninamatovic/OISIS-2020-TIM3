@@ -2,6 +2,7 @@ package team3.view;
 
 import java.awt.Component;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -27,6 +28,7 @@ import team3.view.doctor.LekarPretragaRecepata;
 import team3.view.doctor.LekarSpisakLekova;
 import team3.view.doctor.LekarSpisakRecepata;
 import team3.view.pharmacist.ApProdajaLek;
+import team3.view.pharmacist.ApotekarDodavanjeLeka;
 import team3.view.pharmacist.ApotekarPretragaLekova;
 import team3.view.pharmacist.ApotekarSpisakLekova;
 
@@ -37,7 +39,11 @@ public class MainFrame extends JFrame {
 	private MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		handleLogout();
-		// setResizable(false);
+		setResizable(false);
+
+		setTitle("Apoteka");
+
+		setIconImage(new ImageIcon("./resources/img/Logo.png").getImage());
 	}
 
 	public static MainFrame getInstance() {
@@ -121,7 +127,18 @@ public class MainFrame extends JFrame {
 
 	public void showNewMedicinePage() {
 		getContentPane().removeAll();
-		JPanel panel = (JPanel) new AdmDodavanjeLeka();
+		User u = Database.getInstance().getLoggedIn();
+		getContentPane().removeAll();
+		JPanel panel = null;
+		if (u.getRole().equals("Admin")) {
+
+			panel = (JPanel) new AdmDodavanjeLeka();
+
+		} else {
+			panel = (JPanel) new ApotekarDodavanjeLeka();
+
+		}
+
 		lastFrame = panel;
 		add(panel);
 	}

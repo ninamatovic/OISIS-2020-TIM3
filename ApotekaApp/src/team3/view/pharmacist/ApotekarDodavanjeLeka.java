@@ -1,4 +1,4 @@
-package team3.view.admin;
+package team3.view.pharmacist;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -29,13 +29,13 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
 
-public class AdmDodavanjeLeka extends JPanel {
+public class ApotekarDodavanjeLeka extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 
-	public AdmDodavanjeLeka() {
+	public ApotekarDodavanjeLeka() {
 		setBounds(100, 100, 904, 626);
 		setBackground(new Color(95, 158, 160));
 		setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -47,12 +47,14 @@ public class AdmDodavanjeLeka extends JPanel {
 		add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 
-		AdminUtils.addSidebar(panel);
 		JLabel lblNewLabel_1 = new JLabel("Dodavanje leka");
 		lblNewLabel_1.setForeground(Color.BLACK);
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
 		lblNewLabel_1.setBounds(249, -12, 481, 113);
 		panel.add(lblNewLabel_1);
+
+		PharmacistUtils.addSidebar(panel);
+
 		JLabel lblNewLabel_2 = new JLabel("Naziv:");
 		lblNewLabel_2.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
 		lblNewLabel_2.setBounds(380, 183, 88, 37);
@@ -115,6 +117,7 @@ public class AdmDodavanjeLeka extends JPanel {
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Recept");
 		chckbxNewCheckBox.setBackground(new Color(95, 158, 160));
+
 		chckbxNewCheckBox.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		chckbxNewCheckBox.setBounds(548, 445, 97, 37);
 		panel.add(chckbxNewCheckBox);

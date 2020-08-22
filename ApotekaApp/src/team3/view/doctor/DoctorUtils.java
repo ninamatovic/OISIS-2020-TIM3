@@ -23,7 +23,10 @@ public class DoctorUtils {
 		btnLekovi.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		btnLekovi.setFocusPainted(false);
 		btnLekovi.setBackground(new Color(51, 102, 102));
-
+		JLabel lblNewLabel = new JLabel(new ImageIcon(("./resources/img/LogoM.png")));
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBounds(21, 39, 151, 112);
+		panel.add(lblNewLabel);
 		JButton btnRecepti = new JButton("Recepti");
 		btnRecepti.setBounds(25, 230, 155, 40);
 		btnRecepti.setForeground(Color.WHITE);
