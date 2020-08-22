@@ -30,7 +30,7 @@ public class ReportsController {
 				if (ret.containsKey(medId)) {
 					ReportItem rep = ret.get(medId);
 					rep.setTotalPrice(rep.getTotalPrice() + profit);
-					rep.setTotalPrice(rep.getQuantity() + bi.getQuantity());
+					rep.setQuantity(rep.getQuantity() + bi.getQuantity());
 				} else {
 
 					ReportItem rep = new ReportItem(profit, med.getName(), bi.getQuantity(), bi.getMedId());

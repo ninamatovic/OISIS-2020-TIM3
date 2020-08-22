@@ -61,7 +61,7 @@ public class LekarSpisakLekova extends JPanel {
 
 		JLabel lblNewLabel_1 = new JLabel("Spisak Lekova");
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
-		lblNewLabel_1.setBounds(217, 20, 309, 46);
+		lblNewLabel_1.setBounds(217, 11, 309, 46);
 		add(lblNewLabel_1);
 
 		// setBackground(Color.WHITE);
@@ -78,7 +78,7 @@ public class LekarSpisakLekova extends JPanel {
 		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 		btnPretraga.setFocusPainted(false);
 		btnPretraga.setBackground(new Color(51, 102, 102));
-		btnPretraga.setBounds(251, 64, 150, 40);
+		btnPretraga.setBounds(217, 59, 133, 43);
 		add(btnPretraga);
 
 		DefaultRowSorter sorter = ((DefaultRowSorter) table.getRowSorter());

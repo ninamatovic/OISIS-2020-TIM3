@@ -81,10 +81,12 @@ public class LekarPretragaRecepata extends JPanel {
 
 		JButton btnNewButton = new JButton("Potvrdi");
 		btnNewButton.setBounds(331, 440, 89, 23);
+		btnNewButton.setBackground(new Color(255, 182, 193));
 		add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Otka\u017Ei");
 		btnNewButton_1.setBounds(450, 440, 89, 23);
+		btnNewButton_1.setBackground(new Color(255, 182, 193));
 		add(btnNewButton_1);
 
 		textField = new JTextField();
@@ -100,22 +102,26 @@ public class LekarPretragaRecepata extends JPanel {
 		textField_1.setColumns(10);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("\u0160ifra");
+		rdbtnNewRadioButton.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		rdbtnNewRadioButton.setBounds(194, 137, 187, 42);
 		rdbtnNewRadioButton.setSelected(true);
 		add(rdbtnNewRadioButton);
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Lekar");
+		rdbtnNewRadioButton_1.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton_1.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		rdbtnNewRadioButton_1.setBounds(194, 198, 187, 42);
 		add(rdbtnNewRadioButton_1);
 
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("JMBG pacijenta");
+		rdbtnNewRadioButton_2.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton_2.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		rdbtnNewRadioButton_2.setBounds(194, 270, 187, 45);
 		add(rdbtnNewRadioButton_2);
 
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Lek");
+		rdbtnNewRadioButton_3.setBackground(new Color(102, 153, 153));
 		rdbtnNewRadioButton_3.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		rdbtnNewRadioButton_3.setBounds(194, 346, 187, 46);
 		add(rdbtnNewRadioButton_3);
@@ -137,7 +143,7 @@ public class LekarPretragaRecepata extends JPanel {
 		textField_3.setColumns(10);
 		textField_3.setBounds(430, 353, 187, 32);
 		add(textField_3);
-
+	
 		btnNewButton_1.addActionListener(new ActionListener() {
 
 			@Override

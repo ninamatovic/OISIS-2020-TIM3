@@ -110,8 +110,8 @@ public class LekarSpisakRecepata extends JPanel {
 			}
 		});
 
-		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(227, 64, 104, 43);
+	//	lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		lblNewLabel_1.setBounds(217, 64, 133, 43);
 		add(lblNewLabel_1);
 
 		/*
@@ -146,7 +146,7 @@ public class LekarSpisakRecepata extends JPanel {
 		btnPretraga.setForeground(Color.WHITE);
 		btnPretraga.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		btnPretraga.setBackground(new Color(51, 102, 102));
-		btnPretraga.setBounds(355, 64, 133, 43);
+		btnPretraga.setBounds(360, 64, 133, 43);
 		add(btnPretraga);
 
 		DefaultRowSorter sorter = ((DefaultRowSorter) table.getRowSorter());

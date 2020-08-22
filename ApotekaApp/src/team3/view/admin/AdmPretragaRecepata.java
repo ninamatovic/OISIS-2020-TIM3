@@ -86,7 +86,7 @@ public class AdmPretragaRecepata extends JPanel {
 
 		JButton btnNewButton = new JButton("Potvrdi");
 		// btnNewButton.setBackground(new Color(95, 158, 160));
-		btnNewButton.setBackground(new Color(255, 182, 193));
+		btnNewButton.setBackground(new Color(102, 205, 170));
 		btnNewButton.setBounds(484, 447, 104, 32);
 		panel.add(btnNewButton);
 
